@@ -1,35 +1,40 @@
 import React from 'react';
-import { Container, Typography } from '@mui/material';
+import { Container } from '@mui/material';
 import type { Page } from '../App';
-import { translations, type Language } from '../config/translations';
+import type { Language } from '../config/translations';
+import HomePage from '../pages/HomePage';
+import FloorPlansAndPricesPage from '../pages/FloorPlansAndPricesPage';
+import BuildingPage from '../pages/BuildingPage';
+import InteriorPage from '../pages/InteriorPage';
+import PropertyAcquisitionPage from '../pages/PropertyAcquisitionPage';
+import ContactPage from '../pages/ContactPage';
 
 interface MainContentProps {
   page: Page;
-  language: Language; // 👈 ADD THIS
+  language: Language;
 }
 
 const MainContent: React.FC<MainContentProps> = ({ page, language }) => {
-  const t = translations[language];
 
   const renderContent = () => {
     switch (page) {
       case 'HomePage':
-        return <Typography variant="h4">{t.home}</Typography>;
+        return <HomePage language={language} />;
 
       case 'FloorPlansAndPricesPage':
-        return <Typography variant="h4">{t.floorPlans}</Typography>;
+        return <FloorPlansAndPricesPage language={language} />;
 
       case 'BuildingPage':
-        return <Typography variant="h4">{t.building}</Typography>;
+        return <BuildingPage language={language} />;
 
       case 'InteriorPage':
-        return <Typography variant="h4">{t.interior}</Typography>;
+        return <InteriorPage language={language} />;
 
       case 'PropertyAcquisitionPage':
-        return <Typography variant="h4">{t.property}</Typography>;
+        return <PropertyAcquisitionPage language={language} />;
 
       case 'ContactPage':
-        return <Typography variant="h4">{t.contact}</Typography>;
+        return <ContactPage />;
 
       default:
         return null;
