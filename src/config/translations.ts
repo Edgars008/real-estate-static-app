@@ -8,6 +8,22 @@ export const translations = {
     interior: 'Interjers',
     property: 'Īpašuma iegāde',
     contact: 'Kontakti',
+    homePage: {
+        title: "RĪGAS IELAS REZIDENCE",
+        subtitle: "Vieta, kas kļūst par mājām!",
+        button: "REZERVĒT UN PIRKT DZĪVOKLI!",
+        stats: {
+            apartments: "dzīvokļi",
+            floors: "stāvi",
+            energy: "energoefektivitātes klase",
+            commissioning: "ekspluatācijā",
+        }
+    },
+    floorPlansAndPricesPage: {
+        livingRoom: "DZĪVOJAMA ISTABA",
+        bedroom: "GUĻAMISTABA",
+        bathroom: "VANASISTABA",
+    },
     interiorPage: {
         title: "INTERJERS",
         description1: "Interjera dizainere Kristīne Nazarova ar vairāk nekā 10 gadu pieredzi individuālu interjeru izstrādē...",
@@ -17,6 +33,9 @@ export const translations = {
         role: "Interjera dizainere",
         phone: "+371 29 418 755",
         email: "k@kninterior.com",
+        livingRoom: "DZĪVOJAMA ISTABA",
+        bedroom: "GUĻAMISTABA",
+        bathroom: "VANASISTABA",
     },
     propertyPage: {
         propertyTitle: "ĪPAŠUMA IEGĀDE",
@@ -35,6 +54,22 @@ export const translations = {
     interior: 'Interior',
     property: 'Property acquisition',
     contact: 'Contact',
+    homePage: {
+        title: "RĪGAS IELAS REZIDENCE",
+        subtitle: "A place that becomes home!",
+        button: "RESERVE AND BUY AN APARTMENT!",
+        stats: {
+            apartments: "apartments",
+            floors: "floors",
+            energy: "energy class",
+            commissioning: "year of commissioning",
+        }
+    },
+    floorPlansAndPricesPage: {
+        livingRoom: "LIVING ROOM WITH KITCHEN AREA",
+        bedroom: "BEDROOM",
+        bathroom: "BATHROOM",
+    },
     interiorPage: {
         title: "INTERIOR",
         description1: "Interior designer Kristīne Nazarova, who has more than 10 years of experience...",
@@ -44,6 +79,9 @@ export const translations = {
         role: "Interior designer",
         phone: "+371 29 418 755",
         email: "k@kninterior.com",
+        livingRoom: "LIVING ROOM WITH KITCHEN AREA",
+        bedroom: "BEDROOM",
+        bathroom: "BATHROOM",
     },
     propertyPage: {
         propertyTitle: "PROPERTY ACQUISITION",
@@ -62,6 +100,22 @@ export const translations = {
     interior: '[RU] Interior',
     property: '[RU] Property acquisition',
     contact: '[RU] Contact',
+    homePage: {
+        title: "RĪGAS IELAS REZIDENCE",
+        subtitle: "Место, которое становится домом!",
+        button: "ЗАБРОНИРОВАТЬ И КУПИТЬ КВАРТИРУ!",
+        stats: {
+            apartments: "квартир",
+            floors: "этажа",
+            energy: "класс энергоэффективности",
+            commissioning: "год ввода в эксплуатацию",
+        }
+    },
+    floorPlansAndPricesPage: {
+        livingRoom: "[RU] LIVING ROOM WITH KITCHEN AREA",
+        bedroom: "[RU] BEDROOM",
+        bathroom: "[RU] BATHROOM",
+    },
     interiorPage: {
         title: "ИНТЕРЬЕР",
         description1: "...",
@@ -71,6 +125,9 @@ export const translations = {
         role: "Дизайнер интерьера",
         phone: "+371 29 418 755",
         email: "k@kninterior.com",
+        livingRoom: "[RU] LIVING ROOM WITH KITCHEN AREA",
+        bedroom: "[RU] BEDROOM",
+        bathroom: "[RU] BATHROOM",
     },
     propertyPage: {
         propertyTitle: "[RU] PROPERTY ACQUISITION",

@@ -85,14 +85,10 @@ const InteriorPage: React.FC<Props> = ({ language }) => {
           </Grid>
         </Grid>
 
-        <InteriorGallery
-          title="LIVING ROOM WITH KITCHEN AREA"
-          images={interiorGallery.living}
-        />
+        <InteriorGallery title={t.livingRoom} images={interiorGallery.living} />
 
-        <InteriorGallery title="BEDROOM" images={interiorGallery.bedroom} />
-        <InteriorGallery title="BATHROOM" images={interiorGallery.bathroom} />
-      
+        <InteriorGallery title={t.bedroom} images={interiorGallery.bedroom} />
+        <InteriorGallery title={t.bathroom} images={interiorGallery.bathroom} />
       </Container>
     </Box>
   );
