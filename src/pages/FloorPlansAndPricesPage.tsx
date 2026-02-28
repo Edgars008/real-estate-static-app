@@ -1,15 +1,15 @@
 import React from "react";
 import { Box, Typography, Container } from "@mui/material";
 import { translations, type Language } from "../config/translations";
-import InteriorGallery from "../components/InteriorGallery";
-import { interiorGallery } from "../config/interiorGallery";
+import FloorGallery from "../components/FloorGallery";
+import { floorGalleryData } from "../config/floorGallery";
 
 interface Props {
   language: Language;
 }
 
 const FloorPlansAndPricesPage: React.FC<Props> = ({ language }) => {
-  const t = translations[language].interiorPage;
+  const t = translations[language];
 
   return (
     <Box
@@ -19,19 +19,18 @@ const FloorPlansAndPricesPage: React.FC<Props> = ({ language }) => {
       }}
     >
       <Container maxWidth="lg">
-        {/* Title */}
+        {/* Page Title */}
         <Typography
           variant="h3"
           fontWeight={700}
           sx={{ mb: { xs: 6, md: 10 } }}
         >
-          {t.title}
+          {t.floorPlans}
         </Typography>
 
-
-        <InteriorGallery
-          title="FLOOR PLANS AND PRICES"
-          images={interiorGallery.floorPlans}
+        <FloorGallery
+          floors={floorGalleryData}
+          language={language}
         />
       </Container>
     </Box>

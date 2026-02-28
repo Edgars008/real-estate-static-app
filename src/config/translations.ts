@@ -45,6 +45,17 @@ export const translations = {
         step2Text: "Ja iegādājaties dzīvokli būvniecības laikā...",
         step3Title: "PIRKUMA LĪGUMS",
         step3Text: "Pirkuma līgums tiks parakstīts pēc ēkas nodošanas ekspluatācijā..."
+    },
+    floorGallery: {
+        floor: "STĀVS",
+        apartmentNo: "Dzīvoklis Nr.",
+        stairwell: "kāpņu telpa",
+        reserved: "REZERVĒTS",
+        rooms: "istabas",
+        apartmentConsistsOf: "Dzīvoklis sastāv no:",
+        totalArea: "Kopējā platība:",
+        livingArea: "Dzīvojamā platība:",
+        terrace: "Terase:",
     }
   },
   eng: {
@@ -91,6 +102,17 @@ export const translations = {
         step2Text: "If you purchase an apartment during construction, you must sign a preliminary purchase agreement. This agreement requires you to pay a deposit of 10% of the total purchase price.",
         step3Title: "PURCHASE AGREEMENT",
         step3Text:"The purchase agreement will be signed after the building is commissioned and divided into individual apartment units. If a preliminary agreement was signed, you will be required to pay the remaining 90% of the total purchase price after the purchase agreement is signed. If a preliminary agreement is not concluded, the entire purchase price must be paid upon signing the purchase agreement."
+    },
+    floorGallery: {
+        floor: "FLOOR",
+        apartmentNo: "Apartment No.",
+        stairwell: "stairwell",
+        reserved: "RESERVED",
+        rooms: "rooms",
+        apartmentConsistsOf: "The apartment consists of:",
+        totalArea: "Total area:",
+        livingArea: "Living area:",
+        terrace: "Terrace:",
     }
   },
   ru: {
@@ -137,6 +159,17 @@ export const translations = {
         step2Text: "[RU] If you purchase an apartment during construction, you must sign a preliminary purchase agreement. This agreement requires you to pay a deposit of 10% of the total purchase price.",
         step3Title: "[RU] PURCHASE AGREEMENT",
         step3Text:"[RU] The purchase agreement will be signed after the building is commissioned and divided into individual apartment units. If a preliminary agreement was signed, you will be required to pay the remaining 90% of the total purchase price after the purchase agreement is signed. If a preliminary agreement is not concluded, the entire purchase price must be paid upon signing the purchase agreement."
+    },
+    floorGallery: {
+        floor: "ЭТАЖ",
+        apartmentNo: "Квартира №",
+        stairwell: "лестничная клетка",
+        reserved: "ЗАРЕЗЕРВИРОВАНО",
+        rooms: "комнаты",
+        apartmentConsistsOf: "Квартира состоит из:",
+        totalArea: "Общая площадь:",
+        livingArea: "Жилая площадь:",
+        terrace: "Терраса:",
     }
   },
 };
