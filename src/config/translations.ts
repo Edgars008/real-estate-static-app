@@ -119,6 +119,10 @@ export const translations = {
         reserved: "REZERVĒTS",
         footnote: "[LV] The sizes of apartments and rooms indicated on this website are subject to change after their on-site measurement."
     },
+    floatingBanner: {
+        text: "Skatīt stāvu plānus un cenas",
+        here: "ŠEIT"
+    },
   },
   eng: {
     home: 'Home',
@@ -238,6 +242,10 @@ export const translations = {
         reserved: "RESERVED",
         footnote: "The sizes of apartments and rooms indicated on this website are subject to change after their on-site measurement."
     },
+    floatingBanner: {
+        text: "See floor plans and prices",
+        here: "HERE"
+    },
   },
   ru: {
     home: '[RU] Home',
@@ -356,6 +364,10 @@ contactPage: {
         price: "ЦЕНА (БЕЗ ПАРКОВКИ)",
         reserved: "ЗАРЕЗЕРВИРОВАНО",
         footnote: "[RU] The sizes of apartments and rooms indicated on this website are subject to change after their on-site measurement."
+    },
+    floatingBanner: {
+        text: "Смотреть планы этажей и цены",
+        here: "ЗДЕСЬ"
     },
   },
 };

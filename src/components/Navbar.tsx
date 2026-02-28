@@ -10,10 +10,6 @@ import {
   Typography,
   IconButton,
   Drawer,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
@@ -33,7 +29,7 @@ const APP_TITLE = "Rīgas ielas rezidence";
 const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
   const t = translations[language];
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery("(max-width:1400px)");
 
   const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -65,11 +61,13 @@ const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
           }}
         >
           {/* LEFT — Logo + Title */}
-          <Box
-            sx={{
+          <NavLink
+            to="/home"
+            style={{
               display: "flex",
               alignItems: "center",
-              gap: 2,
+              gap: 12,
+              textDecoration: "none",
               flex: 1,
             }}
           >
@@ -77,23 +75,26 @@ const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
               component="img"
               src={logo}
               alt="Logo"
-              sx={{ height: { xs: 45, md: 60 } }}
+              sx={{ height: { xs: 40, md: 60 } }}
             />
 
-            {!isMobile && (
-              <Typography
-                sx={{
-                  color: "white",
-                  fontFamily: "'Playfair Display', serif",
-                  fontWeight: 600,
-                  fontSize: "1.4rem",
-                  letterSpacing: "0.08em",
-                }}
-              >
-                {APP_TITLE}
-              </Typography>
-            )}
-          </Box>
+            <Typography
+              sx={{
+                color: "white",
+                fontFamily: "'Playfair Display', serif",
+                fontWeight: 600,
+                letterSpacing: "0.06em",
+                fontSize: {
+                  xs: "0.9rem", // 👈 smaller on mobile
+                  sm: "1.05rem",
+                  md: "1.4rem", // 👈 full size on desktop
+                },
+                whiteSpace: "nowrap",
+              }}
+            >
+              {APP_TITLE}
+            </Typography>
+          </NavLink>
 
           {/* DESKTOP NAV */}
           {!isMobile && (
