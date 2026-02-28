@@ -56,7 +56,7 @@ const FloorPlansAndPricesPage: React.FC<Props> = ({ language }) => {
         />
 
         {/* Contact */}
-        <ContactPage />
+        <ContactPage language={language} />
       </Container>
     </Box>
   );
