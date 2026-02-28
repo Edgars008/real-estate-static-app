@@ -1,8 +1,10 @@
 import React from "react";
-import { Box, Typography, Container } from "@mui/material";
+import { Box, Typography, Container, Divider } from "@mui/material";
 import { translations, type Language } from "../config/translations";
 import FloorGallery from "../components/FloorGallery";
 import { floorGalleryData } from "../config/floorGallery";
+import ApartmentsTable from "../components/ApartmentsTable";
+import ContactPage from "./ContactPage";
 
 interface Props {
   language: Language;
@@ -28,10 +30,33 @@ const FloorPlansAndPricesPage: React.FC<Props> = ({ language }) => {
           {t.floorPlans}
         </Typography>
 
+        {/* Floor Gallery */}
         <FloorGallery
           floors={floorGalleryData}
           language={language}
         />
+
+        {/* Divider */}
+        <Divider
+          sx={{
+            my: { xs: 8, md: 12 },
+            borderColor: "#d8d4c8",
+          }}
+        />
+
+        {/* Apartments Table */}
+        <ApartmentsTable language={language} />
+
+        {/* Divider */}
+        <Divider
+          sx={{
+            my: { xs: 8, md: 12 },
+            borderColor: "#d8d4c8",
+          }}
+        />
+
+        {/* Contact */}
+        <ContactPage />
       </Container>
     </Box>
   );

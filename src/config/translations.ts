@@ -56,7 +56,17 @@ export const translations = {
         totalArea: "Kopējā platība:",
         livingArea: "Dzīvojamā platība:",
         terrace: "Terase:",
-    }
+    },
+    floorPlansAndPricesTable: {
+        title: "STĀVU PLĀNI UN CENAS",
+        floor: "STĀVS",
+        aptNo: "DZĪVOKĻA NR.",
+        rooms: "ISTABAS",
+        totalArea: "KOPĒJĀ PLATĪBA",
+        price: "CENA (BEZ STĀVVIETAS)",
+        reserved: "REZERVĒTS",
+        footnote: "[LV] The sizes of apartments and rooms indicated on this website are subject to change after their on-site measurement."
+    },
   },
   eng: {
     home: 'Home',
@@ -113,7 +123,17 @@ export const translations = {
         totalArea: "Total area:",
         livingArea: "Living area:",
         terrace: "Terrace:",
-    }
+    },
+    floorPlansAndPricesTable: {
+        title: "FLOOR PLANS AND PRICES",
+        floor: "FLOOR",
+        aptNo: "APT. NO.",
+        rooms: "ROOMS",
+        totalArea: "TOTAL AREA",
+        price: "PRICE WITHOUT PARKING SPACE",
+        reserved: "RESERVED",
+        footnote: "The sizes of apartments and rooms indicated on this website are subject to change after their on-site measurement."
+    },
   },
   ru: {
     home: '[RU] Home',
@@ -170,6 +190,16 @@ export const translations = {
         totalArea: "Общая площадь:",
         livingArea: "Жилая площадь:",
         terrace: "Терраса:",
-    }
+    },
+    floorPlansAndPricesTable: {
+        title: "ПЛАНЫ ЭТАЖЕЙ И ЦЕНЫ",
+        floor: "ЭТАЖ",
+        aptNo: "№ КВАРТИРЫ",
+        rooms: "КОМНАТЫ",
+        totalArea: "ОБЩАЯ ПЛОЩАДЬ",
+        price: "ЦЕНА (БЕЗ ПАРКОВКИ)",
+        reserved: "ЗАРЕЗЕРВИРОВАНО",
+        footnote: "[RU] The sizes of apartments and rooms indicated on this website are subject to change after their on-site measurement."
+    },
   },
 };

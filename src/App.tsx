@@ -13,7 +13,7 @@ export type Page =
   | 'PropertyAcquisitionPage'
   | 'ContactPage';
 
-const APP_TITLE = 'Loča Nams';
+const APP_TITLE = 'Rīgas ielas rezidence';
 
 const App: React.FC = () => {
   const [page, setPage] = useState<Page>('HomePage');
