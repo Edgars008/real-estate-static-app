@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AppBar,
   Toolbar,
@@ -8,7 +8,17 @@ import {
   Select,
   type SelectChangeEvent,
   Typography,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import { NavLink } from "react-router-dom";
 import { translations, type Language } from "../config/translations";
 import logo from "../assets/locu_nams_logo.svg";
@@ -22,6 +32,10 @@ const APP_TITLE = "Rīgas ielas rezidence";
 
 const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
   const t = translations[language];
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   const navLinks = [
     { path: "/home", label: t.home },
@@ -39,7 +53,7 @@ const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
         elevation={0}
         sx={{
           backgroundColor: "#2b6276",
-          px: 4,
+          px: { xs: 2, md: 4 },
         }}
       >
         <Toolbar
@@ -63,87 +77,161 @@ const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
               component="img"
               src={logo}
               alt="Logo"
-              sx={{ height: 60 }}
+              sx={{ height: { xs: 45, md: 60 } }}
             />
 
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "'Playfair Display', serif",
-                fontWeight: 600,
-                fontSize: "1.4rem",
-                letterSpacing: "0.08em",
-              }}
-            >
-              {APP_TITLE}
-            </Typography>
-          </Box>
-
-          {/* CENTER — Perfectly Centered Navigation */}
-          <Box
-            sx={{
-              position: "absolute",
-              left: "50%",
-              transform: "translateX(-50%)",
-              display: "flex",
-              gap: 4,
-            }}
-          >
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.path}
-                to={link.path}
-                style={({ isActive }) => ({
-                  color: "white",
-                  textDecoration: "none",
-                  paddingBottom: 6,
-                  borderBottom: isActive
-                    ? "2px solid white"
-                    : "2px solid transparent",
-                  transition: "border-color 0.3s ease",
-                  fontWeight: 500,
-                })}
-              >
-                {link.label}
-              </NavLink>
-            ))}
-          </Box>
-
-          {/* RIGHT — Language Switch */}
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "flex-end",
-              flex: 1,
-            }}
-          >
-            <FormControl size="small" variant="standard">
-              <Select
-                value={language}
-                onChange={(event: SelectChangeEvent) =>
-                  setLanguage(event.target.value as Language)
-                }
-                disableUnderline
+            {!isMobile && (
+              <Typography
                 sx={{
                   color: "white",
-                  "& .MuiSvgIcon-root": { color: "white" },
-                  minWidth: 70,
+                  fontFamily: "'Playfair Display', serif",
+                  fontWeight: 600,
+                  fontSize: "1.4rem",
+                  letterSpacing: "0.08em",
                 }}
               >
-                <MenuItem value="lv" disabled={language === "lv"}>
-                  LV
-                </MenuItem>
-                <MenuItem value="eng" disabled={language === "eng"}>
-                  ENG
-                </MenuItem>
-                <MenuItem value="ru" disabled={language === "ru"}>
-                  RU
-                </MenuItem>
-              </Select>
-            </FormControl>
+                {APP_TITLE}
+              </Typography>
+            )}
           </Box>
+
+          {/* DESKTOP NAV */}
+          {!isMobile && (
+            <>
+              <Box
+                sx={{
+                  position: "absolute",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  display: "flex",
+                  gap: 4,
+                }}
+              >
+                {navLinks.map((link) => (
+                  <NavLink
+                    key={link.path}
+                    to={link.path}
+                    style={({ isActive }) => ({
+                      color: "white",
+                      textDecoration: "none",
+                      paddingBottom: 6,
+                      borderBottom: isActive
+                        ? "2px solid white"
+                        : "2px solid transparent",
+                      transition: "border-color 0.3s ease",
+                      fontWeight: 500,
+                    })}
+                  >
+                    {link.label}
+                  </NavLink>
+                ))}
+              </Box>
+
+              {/* Language Switch */}
+              <Box
+                sx={{ flex: 1, display: "flex", justifyContent: "flex-end" }}
+              >
+                <FormControl size="small" variant="standard">
+                  <Select
+                    value={language}
+                    onChange={(event: SelectChangeEvent) =>
+                      setLanguage(event.target.value as Language)
+                    }
+                    disableUnderline
+                    sx={{
+                      color: "white",
+                      "& .MuiSvgIcon-root": { color: "white" },
+                      minWidth: 70,
+                    }}
+                  >
+                    <MenuItem value="lv">LV</MenuItem>
+                    <MenuItem value="eng">ENG</MenuItem>
+                    <MenuItem value="ru">RU</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
+            </>
+          )}
+
+          {/* MOBILE HAMBURGER */}
+          {isMobile && (
+            <IconButton
+              onClick={() => setDrawerOpen(true)}
+              sx={{ color: "white" }}
+            >
+              <MenuIcon />
+            </IconButton>
+          )}
         </Toolbar>
       </AppBar>
+
+      {/* MOBILE DRAWER */}
+      <Drawer
+        anchor="right"
+        open={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        PaperProps={{
+          sx: {
+            width: 260,
+            backgroundColor: "#2b6276",
+            color: "white",
+            p: 3,
+          },
+        }}
+      >
+        <Box display="flex" justifyContent="flex-end">
+          <IconButton
+            onClick={() => setDrawerOpen(false)}
+            sx={{ color: "white" }}
+          >
+            <CloseIcon />
+          </IconButton>
+        </Box>
+
+        <Box mt={4} display="flex" flexDirection="column" gap={3}>
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.path}
+              to={link.path}
+              onClick={() => setDrawerOpen(false)}
+              style={({ isActive }) => ({
+                color: "white",
+                textDecoration: "none",
+                fontSize: "1.1rem",
+                fontWeight: 500,
+                paddingBottom: 6,
+                borderBottom: isActive
+                  ? "2px solid white"
+                  : "2px solid transparent",
+                transition: "border-color 0.3s ease",
+              })}
+            >
+              {link.label}
+            </NavLink>
+          ))}
+        </Box>
+
+        {/* Language Switch */}
+        <Box mt={5}>
+          <FormControl fullWidth variant="standard">
+            <Select
+              value={language}
+              onChange={(event: SelectChangeEvent) =>
+                setLanguage(event.target.value as Language)
+              }
+              disableUnderline
+              sx={{
+                color: "white",
+                "& .MuiSvgIcon-root": { color: "white" },
+              }}
+            >
+              <MenuItem value="lv">LV</MenuItem>
+              <MenuItem value="eng">ENG</MenuItem>
+              <MenuItem value="ru">RU</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
+      </Drawer>
 
       {/* Spacer */}
       <Toolbar sx={{ minHeight: 80 }} />

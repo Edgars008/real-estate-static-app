@@ -1,6 +1,7 @@
 import React from "react";
-import { Box, Typography, Grid, Container } from "@mui/material";
+import { Box, Typography, Grid, Container, Divider } from "@mui/material";
 import { translations, type Language } from "../config/translations";
+import ContactPage from "./ContactPage";
 
 interface Props {
   language: Language;
@@ -37,7 +38,7 @@ const StepBlock = ({
       {/* Number pill */}
       <Box
         sx={{
-          width: 50,  // smaller width
+          width: 50, // smaller width
           height: 70, // smaller height
           border: "2px solid #0d2c3d",
           borderRadius: "50%",
@@ -139,6 +140,15 @@ const PropertyAcquisitionPage: React.FC<Props> = ({ language }) => {
           </Grid>
         </Grid>
       </Container>
+
+      <Divider
+        sx={{
+          my: { xs: 8, md: 12 },
+          borderColor: "#d8d4c8",
+        }}
+      />
+
+      <ContactPage language={language} />
     </Box>
   );
 };

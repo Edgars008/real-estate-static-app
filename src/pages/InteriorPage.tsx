@@ -1,9 +1,10 @@
 import React from "react";
-import { Box, Typography, Grid, Container } from "@mui/material";
+import { Box, Typography, Grid, Container, Divider } from "@mui/material";
 import { translations, type Language } from "../config/translations";
 import designerImg from "../assets/interior-designer.jpg";
 import InteriorGallery from "../components/InteriorGallery";
 import { interiorGallery } from "../config/interiorGallery";
+import ContactPage from "./ContactPage";
 
 interface Props {
   language: Language;
@@ -89,6 +90,14 @@ const InteriorPage: React.FC<Props> = ({ language }) => {
 
         <InteriorGallery title={t.bedroom} images={interiorGallery.bedroom} />
         <InteriorGallery title={t.bathroom} images={interiorGallery.bathroom} />
+
+        <Divider
+          sx={{
+            my: { xs: 8, md: 12 },
+            borderColor: "#d8d4c8",
+          }}
+        />
+        <ContactPage language={language} />
       </Container>
     </Box>
   );

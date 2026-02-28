@@ -4,6 +4,7 @@ import type { Language } from "../config/translations";
 import UniversalSection from "../components/UniversalSection";
 import wave from "../assets/buildingPage/wave.svg";
 import { Divider } from "@mui/material";
+import ContactPage from "./ContactPage";
 
 interface Props {
   language: Language;
@@ -53,6 +54,15 @@ const BuildingPage: React.FC<Props> = ({ language }) => {
         imageAlt="Building"
         imagePosition="right" // ← switch side here
       />
+
+     <Divider
+        sx={{
+          my: { xs: 8, md: 12 },
+          borderColor: "#d8d4c8",
+        }}
+      />
+
+      <ContactPage language={language} />
     </>
   );
 };

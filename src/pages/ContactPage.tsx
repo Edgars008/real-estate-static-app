@@ -1,128 +1,186 @@
-import React, { useState } from 'react';
-import {
-  Box,
-  Grid,
-  Typography,
-  TextField,
-  Button,
-  Paper
-} from '@mui/material';
+import React, { useState } from "react";
+import { Box, Grid, Typography, TextField, Button } from "@mui/material";
 import { translations, type Language } from "../config/translations";
+
+import agrisImg from "../assets/contactsPage/agris.png";
+import andrejsImg from "../assets/contactsPage/andrejs.png";
 
 interface Props {
   language: Language;
 }
 
 const ContactPage: React.FC<Props> = ({ language }) => {
-  const t = translations[language];
+  const t = translations[language].contactPage;
+
   const [form, setForm] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    message: ''
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(form); // later connect to backend
+    console.log(form);
   };
 
+  const contacts = [
+    {
+      name: "Agris Reinfelds",
+      title: t.salesSpecialist,
+      phone: "+371 29 220 608",
+      email: "agris@agprojekts.lv",
+      image: agrisImg,
+    },
+    {
+      name: "Andrejs Džeriņš",
+      title: t.ceo,
+      phone: "+371 29 238 014",
+      email: "andrejs@agprojekts.lv",
+      image: andrejsImg,
+    },
+  ];
+
   return (
-    <Grid container spacing={4}>
-      
-      {/* LEFT SIDE */}
-      <Grid size={{ xs: 12, md: 5 }} >
-        <Paper sx={{ p: 4, backgroundColor: '#f5f2eb' }}>
-          <Typography variant="h5" gutterBottom>
-            Contact Information
-          </Typography>
+    <Box sx={{ px: { xs: 2, md: 6 }, py: 6 }}>
+      <Grid container spacing={8}>
+        {/* LEFT SIDE — CONTACT PEOPLE */}
+        <Grid size={{ xs: 12, md: 6 }}>
+          <Grid container spacing={6}>
+            {contacts.map((person) => (
+              <Grid size={{ xs: 12, sm: 6 }} key={person.email}>
+                <Box>
+                  {/* Image */}
+                  <Box
+                    component="img"
+                    src={person.image}
+                    alt={person.name}
+                    sx={{
+                      width: "100%",
+                      maxWidth: 260,
+                      height: 260,
+                      objectFit: "cover",
+                      mb: 3,
+                    }}
+                  />
 
-          <Typography variant="body1">
-            <strong>Agris Reinfelds</strong><br />
-            +371 29 220 608<br />
-            <a href="mailto:agris@agprojekts.lv">
-              agris@agprojekts.lv
-            </a>
-          </Typography>
+                  {/* Name */}
+                  <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                    {person.name}
+                  </Typography>
 
-          <Box mt={4}>
-            <Typography variant="body1">
-              <strong>Andrejs Džeriņš</strong><br />
-              +371 29 238 014<br />
-              <a href="mailto:andrejs@agprojekts.lv">
-                andrejs@agprojekts.lv
-              </a>
-            </Typography>
-          </Box>
-        </Paper>
-      </Grid>
+                  {/* Job Title */}
+                  <Typography
+                    variant="body2"
+                    sx={{ mb: 1.5, color: "text.secondary" }}
+                  >
+                    {person.title}
+                  </Typography>
 
-      {/* RIGHT SIDE */}
-      <Grid size={{ xs: 12, md: 5 }}>
-        <Box component="form" onSubmit={handleSubmit}>
-          <Typography variant="h4" gutterBottom>
-            Contact Us
-          </Typography>
+                  {/* Phone */}
+                  <Typography variant="body2" sx={{ fontWeight: 500 }}>
+                    {person.phone}
+                  </Typography>
 
-          <TextField
-            fullWidth
-            label="Name"
-            name="name"
-            margin="normal"
-            required
-            onChange={handleChange}
-          />
+                  {/* Email */}
+                  <Typography variant="body2">
+                    <a
+                      href={`mailto:${person.email}`}
+                      style={{
+                        textDecoration: "none",
+                        color: "#1f4f66",
+                      }}
+                    >
+                      {person.email}
+                    </a>
+                  </Typography>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+        </Grid>
 
-          <TextField
-            fullWidth
-            label="Phone"
-            name="phone"
-            margin="normal"
-            onChange={handleChange}
-          />
-
-          <TextField
-            fullWidth
-            label="Email"
-            name="email"
-            type="email"
-            margin="normal"
-            required
-            onChange={handleChange}
-          />
-
-          <TextField
-            fullWidth
-            label="Message"
-            name="message"
-            multiline
-            rows={4}
-            margin="normal"
-            required
-            onChange={handleChange}
-          />
-
-          <Box mt={3}>
-            <Button
-              variant="contained"
-              type="submit"
+        {/* RIGHT SIDE — CONTACT FORM */}
+        <Grid size={{ xs: 12, md: 6 }}>
+          <Box component="form" onSubmit={handleSubmit}>
+            <Typography
+              variant="h4"
+              gutterBottom
               sx={{
-                backgroundColor: '#1f4f66',
-                borderRadius: '30px',
-                px: 4
+                fontWeight: 600,
+                mb: 4,
               }}
             >
-              Send
-            </Button>
-          </Box>
-        </Box>
-      </Grid>
+              {t.contactUs}
+            </Typography>
 
-    </Grid>
+            <TextField
+              fullWidth
+              label={t.form.nameSurname}
+              name="name"
+              margin="normal"
+              required
+              onChange={handleChange}
+            />
+
+            <TextField
+              fullWidth
+              label={t.form.phoneNumber}
+              name="phone"
+              margin="normal"
+              onChange={handleChange}
+            />
+
+            <TextField
+              fullWidth
+              label={t.form.email}
+              name="email"
+              type="email"
+              margin="normal"
+              required
+              onChange={handleChange}
+            />
+
+            <TextField
+              fullWidth
+              label={t.form.message}
+              name="message"
+              multiline
+              rows={4}
+              margin="normal"
+              required
+              onChange={handleChange}
+            />
+
+            <Box mt={4}>
+              <Button
+                variant="contained"
+                type="submit"
+                sx={{
+                  backgroundColor: "#1f4f66",
+                  borderRadius: "30px",
+                  px: 6,
+                  py: 1.3,
+                  textTransform: "none",
+                  fontWeight: 500,
+                  "&:hover": {
+                    backgroundColor: "#163a4d",
+                  },
+                }}
+              >
+                {t.form.send}
+              </Button>
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
+    </Box>
   );
 };
 

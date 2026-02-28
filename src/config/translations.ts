@@ -46,44 +46,57 @@ export const translations = {
         step3Title: "PIRKUMA LĪGUMS",
         step3Text: "Pirkuma līgums tiks parakstīts pēc ēkas nodošanas ekspluatācijā..."
     },
-        buildingPage: {
-    title: "ĒKA",
-    sections: [
-        {
-        subtitle: "ENERGOEFEKTIVITĀTES KLASE – A",
-        text: "Ēka atbilst A energoefektivitātes klases prasībām."
-        },
-        {
-        subtitle: "ĒKAS KONSTRUKCIJAS",
-        highlight: "Pamati – dzelzsbetona lentveida pamati ar siltumizolāciju atbilstoši projektā paredzētajām prasībām un tehnoloģijām.",
-        text: "Pārsegumi – dzelzsbetona dobie paneļi ar nodrošinātu skaņas izolāciju starp stāviem un ierīkotu grīdas apsildes sistēmu. Bēniņu pārsegums izbūvēts atbilstoši siltuma un skaņas izolācijas normām."
-        },
-        {
-        subtitle: "ĀRSIENAS",
-        highlight: "Nesošās sienas – gāzbetona bloku konstrukcijas ar ārējo fasādes siltinājumu.",
-        text: "Fasāde apdarināta ar dekoratīvo ķieģeļu apdari."
-        },
-        {
-        subtitle: "IEKŠSIENAS",
-        highlight: "Dzīvokļu iekšsienas – ģipškartona konstrukcijas ar dubulto apšuvumu abās pusēs.",
-        text: "Starpsienās iestrādāta akmens vates skaņas izolācija."
-        },
-        {
-        subtitle: "JUMTS",
-        highlight: "Četrslīpu jumts no rūpnieciski izgatavotām koka kopnēm.",
-        text: "Jumta segums – ilgmūžīgs metāla lokšņu segums."
-        },
-        {
-        subtitle: "KĀPŅU TELPA",
-        highlight: "Plaša kāpņu telpa ar dzelzsbetona kāpnēm.",
-        text: "Metāla margas un kvalitatīva apdare."
-        },
-        {
-        subtitle: "LOGI UN BALKONA DURVIS",
-        highlight: "Plaši PVC logi un balkona durvis.",
-        text: "Trīskāršais stiklojums nodrošina augstu siltuma un skaņas izolāciju."
+    buildingPage: {
+        title: "ĒKA",
+        sections: [
+            {
+                subtitle: "ENERGOEFEKTIVITĀTES KLASE – A",
+                text: "Ēka atbilst A energoefektivitātes klases prasībām."
+            },
+            {
+                subtitle: "ĒKAS KONSTRUKCIJAS",
+                highlight: "Pamati – dzelzsbetona lentveida pamati ar siltumizolāciju atbilstoši projektā paredzētajām prasībām un tehnoloģijām.",
+                text: "Pārsegumi – dzelzsbetona dobie paneļi ar nodrošinātu skaņas izolāciju starp stāviem un ierīkotu grīdas apsildes sistēmu. Bēniņu pārsegums izbūvēts atbilstoši siltuma un skaņas izolācijas normām."
+            },
+            {
+                subtitle: "ĀRSIENAS",
+                highlight: "Nesošās sienas – gāzbetona bloku konstrukcijas ar ārējo fasādes siltinājumu.",
+                text: "Fasāde apdarināta ar dekoratīvo ķieģeļu apdari."
+            },
+            {
+                subtitle: "IEKŠSIENAS",
+                highlight: "Dzīvokļu iekšsienas – ģipškartona konstrukcijas ar dubulto apšuvumu abās pusēs.",
+                text: "Starpsienās iestrādāta akmens vates skaņas izolācija."
+            },
+            {
+                subtitle: "JUMTS",
+                highlight: "Četrslīpu jumts no rūpnieciski izgatavotām koka kopnēm.",
+                text: "Jumta segums – ilgmūžīgs metāla lokšņu segums."
+            },
+            {
+                subtitle: "KĀPŅU TELPA",
+                highlight: "Plaša kāpņu telpa ar dzelzsbetona kāpnēm.",
+                text: "Metāla margas un kvalitatīva apdare."
+            },
+            {
+                subtitle: "LOGI UN BALKONA DURVIS",
+                highlight: "Plaši PVC logi un balkona durvis.",
+                text: "Trīskāršais stiklojums nodrošina augstu siltuma un skaņas izolāciju."
+            }
+        ]
+    },
+    contactPage: {
+        title: "KONTAKTI",
+        contactUs: "Sazinieties ar mums!",
+        salesSpecialist: "Pārdošanas speciālists",
+        ceo: "SIA AG Projekts valdes priekšsēdētājs",
+        form: {
+            nameSurname: "Vārds / Uzvārds",
+            phoneNumber: "Tālruņa numurs",
+            email: "E-pasta adrese",
+            message: "Jūsu ziņojums",
+            send: "Nosūtīt"
         }
-    ]
     },
     floorGallery: {
         floor: "STĀVS",
@@ -191,6 +204,19 @@ export const translations = {
         }
     ]
     },
+    contactPage: {
+        title: "CONTACT",
+        contactUs: "Contact Us!",
+        salesSpecialist: "Sales specialist",
+        ceo: "CEO of SIA AG Projekts",
+        form: {
+            nameSurname: "Name / Surname",
+            phoneNumber: "Phone number",
+            email: "E-mail address",
+            message: "Your message",
+            send: "Send"
+        }
+    },
     floorGallery: {
         floor: "FLOOR",
         apartmentNo: "Apartment No.",
@@ -259,43 +285,56 @@ export const translations = {
         step3Text:"[RU] The purchase agreement will be signed after the building is commissioned and divided into individual apartment units. If a preliminary agreement was signed, you will be required to pay the remaining 90% of the total purchase price after the purchase agreement is signed. If a preliminary agreement is not concluded, the entire purchase price must be paid upon signing the purchase agreement."
     },
     buildingPage: {
-  title: "ЗДАНИЕ",
-  sections: [
-    {
-      subtitle: "КЛАСС ЭНЕРГОЭФФЕКТИВНОСТИ – A",
-      text: "Здание соответствует классу энергоэффективности A."
-    },
-    {
-      subtitle: "КОНСТРУКЦИИ ЗДАНИЯ",
-      highlight: "Фундаменты – железобетонные ленточные фундаменты с теплоизоляцией в соответствии с требованиями проекта.",
-      text: "Перекрытия – железобетонные пустотные плиты с обеспеченной звукоизоляцией между этажами и системой подогрева пола. Чердачное перекрытие выполнено в соответствии с нормами тепло- и звукоизоляции."
-    },
-    {
-      subtitle: "НАРУЖНЫЕ СТЕНЫ",
-      highlight: "Несущие стены – конструкции из газобетонных блоков с наружной теплоизоляцией фасада.",
-      text: "Фасад отделан декоративным кирпичом."
-    },
-    {
-      subtitle: "ВНУТРЕННИЕ СТЕНЫ",
-      highlight: "Внутренние стены квартир – конструкции из гипсокартона с двойной обшивкой с обеих сторон.",
-      text: "В перегородках используется звукоизоляция из каменной ваты."
-    },
-    {
-      subtitle: "КРЫША",
-      highlight: "Четырёхскатная крыша из заводских деревянных ферм.",
-      text: "Кровельное покрытие – долговечные металлические листы."
-    },
-    {
-      subtitle: "ЛЕСТНИЧНАЯ КЛЕТКА",
-      highlight: "Просторная лестничная клетка с железобетонной лестницей.",
-      text: "Металлические перила и качественная отделка."
-    },
-    {
-      subtitle: "ОКНА И БАЛКОННЫЕ ДВЕРИ",
-      highlight: "Широкие ПВХ окна и балконные двери.",
-      text: "Тройное остекление обеспечивает высокую тепло- и звукоизоляцию."
+        title: "ЗДАНИЕ",
+        sections: [
+        {
+            subtitle: "КЛАСС ЭНЕРГОЭФФЕКТИВНОСТИ – A",
+            text: "Здание соответствует классу энергоэффективности A."
+        },
+        {
+            subtitle: "КОНСТРУКЦИИ ЗДАНИЯ",
+            highlight: "Фундаменты – железобетонные ленточные фундаменты с теплоизоляцией в соответствии с требованиями проекта.",
+            text: "Перекрытия – железобетонные пустотные плиты с обеспеченной звукоизоляцией между этажами и системой подогрева пола. Чердачное перекрытие выполнено в соответствии с нормами тепло- и звукоизоляции."
+        },
+        {
+            subtitle: "НАРУЖНЫЕ СТЕНЫ",
+            highlight: "Несущие стены – конструкции из газобетонных блоков с наружной теплоизоляцией фасада.",
+            text: "Фасад отделан декоративным кирпичом."
+        },
+        {
+            subtitle: "ВНУТРЕННИЕ СТЕНЫ",
+            highlight: "Внутренние стены квартир – конструкции из гипсокартона с двойной обшивкой с обеих сторон.",
+            text: "В перегородках используется звукоизоляция из каменной ваты."
+        },
+        {
+            subtitle: "КРЫША",
+            highlight: "Четырёхскатная крыша из заводских деревянных ферм.",
+            text: "Кровельное покрытие – долговечные металлические листы."
+        },
+        {
+            subtitle: "ЛЕСТНИЧНАЯ КЛЕТКА",
+            highlight: "Просторная лестничная клетка с железобетонной лестницей.",
+            text: "Металлические перила и качественная отделка."
+        },
+        {
+            subtitle: "ОКНА И БАЛКОННЫЕ ДВЕРИ",
+            highlight: "Широкие ПВХ окна и балконные двери.",
+            text: "Тройное остекление обеспечивает высокую тепло- и звукоизоляцию."
+        }
+    ]
+},
+contactPage: {
+    title: "КОНТАКТЫ",
+    contactUs: "Свяжитесь с нами!",
+    salesSpecialist: "Специалист по продажам",
+    ceo: "Председатель правления SIA AG Projekts",
+    form: {
+        nameSurname: "Имя / Фамилия",
+        phoneNumber: "Номер телефона",
+        email: "Адрес электронной почты",
+        message: "Ваше сообщение",
+        send: "Отправить"
     }
-  ]
 },
     floorGallery: {
         floor: "ЭТАЖ",
