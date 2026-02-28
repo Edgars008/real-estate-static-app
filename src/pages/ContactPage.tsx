@@ -7,8 +7,14 @@ import {
   Button,
   Paper
 } from '@mui/material';
+import { translations, type Language } from "../config/translations";
 
-const ContactPage: React.FC = () => {
+interface Props {
+  language: Language;
+}
+
+const ContactPage: React.FC<Props> = ({ language }) => {
+  const t = translations[language];
   const [form, setForm] = useState({
     name: '',
     phone: '',

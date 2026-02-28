@@ -1,32 +1,49 @@
 import React, { useState } from 'react';
 import { Box } from '@mui/material';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import MainContent from './components/MainContent';
+import HomePage from './pages/HomePage';
+import FloorPlansAndPricesPage from './pages/FloorPlansAndPricesPage';
+import BuildingPage from './pages/BuildingPage';
+import InteriorPage from './pages/InteriorPage';
+import PropertyAcquisitionPage from './pages/PropertyAcquisitionPage';
+import ContactPage from './pages/ContactPage';
 import type { Language } from './config/translations';
-
-export type Page =
-  | 'HomePage'
-  | 'FloorPlansAndPricesPage'
-  | 'BuildingPage'
-  | 'InteriorPage'
-  | 'PropertyAcquisitionPage'
-  | 'ContactPage';
 
 const APP_TITLE = 'Rīgas ielas rezidence';
 
 const App: React.FC = () => {
-  const [page, setPage] = useState<Page>('HomePage');
   const [language, setLanguage] = useState<Language>('lv');
 
   return (
     <Box display="flex" flexDirection="column" minHeight="100vh">
-      <Navbar
-        setPage={setPage}
-        language={language}
-        setLanguage={setLanguage}
-      />
-      <MainContent page={page} language={language} />
+      {/* Navbar with language switch */}
+      <Navbar language={language} setLanguage={setLanguage} />
+
+      {/* Main content routes */}
+      <Box component="main" flexGrow={1}>
+        <Routes>
+          {/* Default redirect */}
+          <Route path="/" element={<Navigate to="/home" replace />} />
+
+          {/* Pages */}
+          <Route path="/home" element={<HomePage language={language} />} />
+          <Route
+            path="/floor-plans"
+            element={<FloorPlansAndPricesPage language={language} />}
+          />
+          <Route path="/building" element={<BuildingPage language={language} />} />
+          <Route path="/interior" element={<InteriorPage language={language} />} />
+          <Route
+            path="/property"
+            element={<PropertyAcquisitionPage language={language} />}
+          />
+          <Route path="/contact" element={<ContactPage language={language} />} />
+        </Routes>
+      </Box>
+
+      {/* Footer */}
       <Footer title={APP_TITLE} />
     </Box>
   );
