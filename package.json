@@ -1,5 +1,5 @@
 {
-  "homepage": "https://Edgars008.github.io/real-estate-static-app",
+  "homepage": "https://rigasielasrezidence.lv",
   "name": "real-estate-static-app",
   "private": true,
   "version": "0.0.0",
@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"

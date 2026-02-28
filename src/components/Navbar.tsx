@@ -11,7 +11,6 @@ import {
   IconButton,
   Drawer,
   useMediaQuery,
-  useTheme,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -28,7 +27,6 @@ const APP_TITLE = "Rīgas ielas rezidence";
 
 const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
   const t = translations[language];
-  const theme = useTheme();
   const isMobile = useMediaQuery("(max-width:1400px)");
 
   const [drawerOpen, setDrawerOpen] = useState(false);

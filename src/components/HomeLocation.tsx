@@ -1,14 +1,12 @@
 import React from "react";
 import { Box, Container, Grid, Typography } from "@mui/material";
-import { translations, type Language } from "../config/translations";
+import { type Language } from "../config/translations";
 
 interface Props {
   language: Language;
 }
 
-const HomeLocation: React.FC<Props> = ({ language }) => {
-  const t = translations[language].homePage;
-
+const HomeLocation: React.FC<Props> = ({}) => {
   return (
     <Box sx={{ backgroundColor: "#e9e3d9", py: 8 }}>
       <Container maxWidth="lg">
