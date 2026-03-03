@@ -23,7 +23,7 @@ interface NavbarProps {
   setLanguage: React.Dispatch<React.SetStateAction<Language>>;
 }
 
-const APP_TITLE = "Rīgas ielas rezidence";
+const APP_TITLE = "RĪGAS IELAS REZIDENCES";
 
 const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
   const t = translations[language];

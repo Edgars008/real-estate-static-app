@@ -3,7 +3,7 @@ export type Language = 'lv' | 'eng' | 'ru';
 export const translations = {
   lv: {
     home: 'Sākumlapa',
-    floorPlans: 'Stāvu plāni un cenas',
+    floorPlans: 'Stāvu un dzīvokļu plānojums',
     building: 'Ēka',
     interior: 'Interjers',
     property: 'Īpašuma iegāde',
@@ -13,10 +13,10 @@ export const translations = {
         subtitle: "Vieta, kas kļūst par mājām!",
         button: "REZERVĒT UN PIRKT DZĪVOKLI!",
         stats: {
-            apartments: "dzīvokļi",
-            floors: "stāvi",
-            energy: "energoefektivitātes klase",
-            commissioning: "ekspluatācijā",
+            apartments: "DZĪVOKĻI",
+            floors: "STĀVI",
+            energy: "KLASES ENERGOEFEKTIVITĀTE",
+            commissioning: "GADĀ NODOŠANA EKSPLUATĀCIJĀ",
         }
     },
     floorPlansAndPricesPage: {
@@ -120,13 +120,13 @@ export const translations = {
         footnote: "[LV] The sizes of apartments and rooms indicated on this website are subject to change after their on-site measurement."
     },
     floatingBanner: {
-        text: "Skatīt stāvu plānus un cenas",
-        here: "ŠEIT"
+        text: "DZĪVOKĻU PLĀNOJUMS\nUN CENAS",
+        here: "ŠEIT ▶︎▶︎▶︎▶▶︎"
     },
   },
   eng: {
     home: 'Home',
-    floorPlans: 'Floor plans and prices',
+    floorPlans: 'Floor and apartment layout',
     building: 'Building',
     interior: 'Interior',
     property: 'Property acquisition',
@@ -243,13 +243,13 @@ export const translations = {
         footnote: "The sizes of apartments and rooms indicated on this website are subject to change after their on-site measurement."
     },
     floatingBanner: {
-        text: "See floor plans and prices",
-        here: "HERE"
+        text: "APARTMENT LAYOUTS AND PRICES",
+        here: "HERE ▶︎▶︎▶︎▶▶︎"
     },
   },
   ru: {
     home: '[RU] Home',
-    floorPlans: '[RU] Floor plans and prices',
+    floorPlans: 'Планировка этажа и квартир',
     building: '[RU] Building',
     interior: '[RU] Interior',
     property: '[RU] Property acquisition',
@@ -366,8 +366,8 @@ contactPage: {
         footnote: "[RU] The sizes of apartments and rooms indicated on this website are subject to change after their on-site measurement."
     },
     floatingBanner: {
-        text: "Смотреть планы этажей и цены",
-        here: "ЗДЕСЬ"
+        text: "ПЛАНИРОВКИ КВАРТИР И ЦЕНЫ",
+        here: "ЗДЕСЬ ▶︎▶︎▶︎▶▶︎"
     },
   },
 };

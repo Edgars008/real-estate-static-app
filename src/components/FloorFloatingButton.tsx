@@ -34,29 +34,28 @@ const FloorFloatingButton: React.FC<Props> = ({ language }) => {
           backgroundColor: "#2b5f73",
           color: "#fff",
           textDecoration: "none",
-          px: 5,
+          px: 4,
           py: 3,
           borderRadius: "60px 0 0 60px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           minWidth: 260,
-          "&:hover": {
-            backgroundColor: "#1f4f63",
-          },
         }}
       >
-        <Typography variant="body1" fontWeight={500}>
+        <Typography variant="body1" fontWeight={500}  sx={{ whiteSpace: "pre-line" }}>
           {t.text}
+          {" "}
+           {t.here}
         </Typography>
 
-        <Typography
+        {/* <Typography
           variant="body2"
           fontWeight={700}
           sx={{ mt: 1, display: "flex", alignItems: "center" }}
         >
-          → {t.here}
-        </Typography>
+          {t.here}
+        </Typography> */}
       </Box>
 
       {/* RIGHT SIDE (Close Section) */}

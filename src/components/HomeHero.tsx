@@ -74,14 +74,14 @@ const HomeHero: React.FC<Props> = ({ language }) => {
           <Grid container spacing={4} textAlign="center">
             <Grid size={{ xs: 6, md: 3 }}>
               <Typography variant="h3" fontWeight={700}>
-                12
+                28
               </Typography>
               <Typography>{t.stats.apartments}</Typography>
             </Grid>
 
             <Grid size={{ xs: 6, md: 3 }}>
               <Typography variant="h3" fontWeight={700}>
-                3
+                7
               </Typography>
               <Typography>{t.stats.floors}</Typography>
             </Grid>

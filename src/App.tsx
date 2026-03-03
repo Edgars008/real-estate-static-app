@@ -12,7 +12,7 @@ import ContactPage from "./pages/ContactPage";
 import type { Language } from "./config/translations";
 import FloorFloatingButton from "./components/FloorFloatingButton";
 
-const APP_TITLE = "Rīgas ielas rezidence";
+const APP_TITLE = "RĪGAS IELAS REZIDENCES";
 
 const App: React.FC = () => {
   const [language, setLanguage] = useState<Language>("lv");
