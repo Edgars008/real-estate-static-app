@@ -11,6 +11,7 @@ import PropertyAcquisitionPage from "./pages/PropertyAcquisitionPage";
 import ContactPage from "./pages/ContactPage";
 import type { Language } from "./config/translations";
 import FloorFloatingButton from "./components/FloorFloatingButton";
+import TourPage from "./pages/TourPage";
 
 const APP_TITLE = "RĪGAS IELAS REZIDENCES";
 
@@ -48,6 +49,7 @@ const App: React.FC = () => {
             path="/contact"
             element={<ContactPage language={language} />}
           />
+          <Route path="/360tour" element={<TourPage language={language} />} />
         </Routes>
       </Box>
 

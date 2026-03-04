@@ -27,7 +27,9 @@ const APP_TITLE = "RĪGAS IELAS REZIDENCES";
 
 const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
   const t = translations[language];
-  const isMobile = useMediaQuery("(max-width:1400px)");
+
+  // ✅ increased breakpoint to avoid RU overflow
+  const isMobile = useMediaQuery("(max-width:1600px)");
 
   const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -38,6 +40,7 @@ const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
     { path: "/interior", label: t.interior },
     { path: "/property", label: t.property },
     { path: "/contact", label: t.contact },
+    { path: "/360tour", label: t.tour360 },
   ];
 
   return (
@@ -55,7 +58,6 @@ const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
             display: "flex",
             alignItems: "center",
             minHeight: 80,
-            position: "relative",
           }}
         >
           {/* LEFT — Logo + Title */}
@@ -66,7 +68,6 @@ const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
               alignItems: "center",
               gap: 12,
               textDecoration: "none",
-              flex: 1,
             }}
           >
             <Box
@@ -83,9 +84,9 @@ const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
                 fontWeight: 600,
                 letterSpacing: "0.06em",
                 fontSize: {
-                  xs: "0.9rem", // 👈 smaller on mobile
+                  xs: "0.9rem",
                   sm: "1.05rem",
-                  md: "1.4rem", // 👈 full size on desktop
+                  md: "1.4rem",
                 },
                 whiteSpace: "nowrap",
               }}
@@ -97,13 +98,15 @@ const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
           {/* DESKTOP NAV */}
           {!isMobile && (
             <>
+              {/* Spacer after logo */}
+              <Box sx={{ flexGrow: 0.4 }} />
+
+              {/* CENTER LINKS */}
               <Box
                 sx={{
-                  position: "absolute",
-                  left: "50%",
-                  transform: "translateX(-50%)",
                   display: "flex",
-                  gap: 4,
+                  gap: 3,
+                  alignItems: "center",
                 }}
               >
                 {navLinks.map((link) => (
@@ -119,6 +122,8 @@ const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
                         : "2px solid transparent",
                       transition: "border-color 0.3s ease",
                       fontWeight: 500,
+                      fontSize: "0.95rem",
+                      whiteSpace: "nowrap",
                     })}
                   >
                     {link.label}
@@ -126,29 +131,28 @@ const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
                 ))}
               </Box>
 
+              {/* Push language to right */}
+              <Box sx={{ flexGrow: 1 }} />
+
               {/* Language Switch */}
-              <Box
-                sx={{ flex: 1, display: "flex", justifyContent: "flex-end" }}
-              >
-                <FormControl size="small" variant="standard">
-                  <Select
-                    value={language}
-                    onChange={(event: SelectChangeEvent) =>
-                      setLanguage(event.target.value as Language)
-                    }
-                    disableUnderline
-                    sx={{
-                      color: "white",
-                      "& .MuiSvgIcon-root": { color: "white" },
-                      minWidth: 70,
-                    }}
-                  >
-                    <MenuItem value="lv">LV</MenuItem>
-                    <MenuItem value="eng">ENG</MenuItem>
-                    <MenuItem value="ru">RU</MenuItem>
-                  </Select>
-                </FormControl>
-              </Box>
+              <FormControl size="small" variant="standard">
+                <Select
+                  value={language}
+                  onChange={(event) =>
+                    setLanguage(event.target.value as Language)
+                  }
+                  disableUnderline
+                  sx={{
+                    color: "white",
+                    "& .MuiSvgIcon-root": { color: "white" },
+                    minWidth: 70,
+                  }}
+                >
+                  <MenuItem value="lv">LV</MenuItem>
+                  <MenuItem value="eng">ENG</MenuItem>
+                  <MenuItem value="ru">RU</MenuItem>
+                </Select>
+              </FormControl>
             </>
           )}
 
@@ -203,6 +207,7 @@ const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
                   ? "2px solid white"
                   : "2px solid transparent",
                 transition: "border-color 0.3s ease",
+                whiteSpace: "nowrap",
               })}
             >
               {link.label}

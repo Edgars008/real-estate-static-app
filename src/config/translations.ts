@@ -8,8 +8,9 @@ export const translations = {
     interior: 'Interjers',
     property: 'Īpašuma iegāde',
     contact: 'Kontakti',
+    tour360: '360° tūre',
     homePage: {
-        title: "RĪGAS IELAS REZIDENCE",
+        title: "RĪGAS IELAS REZIDENCES",
         subtitle: "Vieta, kas kļūst par mājām!",
         button: "REZERVĒT UN PIRKT DZĪVOKLI!",
         stats: {
@@ -17,7 +18,25 @@ export const translations = {
             floors: "STĀVI",
             energy: "KLASES ENERGOEFEKTIVITĀTE",
             commissioning: "GADĀ NODOŠANA EKSPLUATĀCIJĀ",
-        }
+        },
+        projectStages: {
+            title: "PROJEKTA POSMI",
+            startLabel: "BŪVNIECĪBAS SĀKUMS",
+            finishLabel: "NODOŠANA EKSPLUATĀCIJĀ",
+            startDate: "2024. NOVEMBRIS",
+            finishDate: "2026. SEPTEMBRIS",
+        },
+        sections1: [
+            {
+                text: "ir moderns, mūsdienīgs 7 stāvu projekts, kas sevī ietver 28 siltus, gaišus, ērtus un praktiskus dzīvokļus ar dažādu kvadratūru un guļamistabu skaitu, ļoti ērtā un lieliskā lokācijā- Rīgas ielā 10b, Ogrē. No dzīvokļiem paveras lielisks skats uz Ogres centru, otrpus – skats paveras uz Ogres salu, Daugavu, Ogres promenādi un promenādes bāku. Māja sastāv no 6 dzīvojamiem stāviem un cokolstāva, kurā ir iekštelpu auto stāvvietas, tehniskās telpas, bērnu ratiņu/velo novietnes, slēdzamās mantu noliktavas, kāpņutelpa un komfortabla priekštelpa viesu uzņemšanai ārpus dzīvokļa. Pagalmā ir pieejamas vairāku tipu auto stāvvietas- 1) standarta; 2) cilvēkiem ar īpašajām vajadzībām; 3) ar iespēju uzstādīt elektrouzlādes staciju. Moderni aprīkots laukumiņš ar bērnu rotaļām, sporta un aktīvā dzīvesveida trenažieriem, kā arī atpūtas soliņiem. Riteņu novietnes ar velo remonta staciju."
+            },
+        ],
+        sections2: [
+            {
+                text: "īpaša uzmanība ir vērsta aktuālām tendencēm un tehnoloģijām, kā arī mūsdienīgiem risinājumiem. Pilsētas apkure ar katrā dzīvoklī ar atsevišķi regulējamu silto grīdu sistēmu, individuālo siltumuzskaiti, kas padara siltumu vienmērīgu, ekonomisku,  prakstisku un neatkarīga ventilācija katrā dzīvoklī ir individuālā gaisa rekuperācijas sistēma no Komfovent, kas Jūs apgādās ar tīru un svaigu gaisu, virtuves nosūkšanas sistēma ir veidota atsevišķi! Katru dzīvokli atdala skaņas izolācijas slāņi. Plaši un lieli trīspakešu logi, vitrīnas, kas dzīvokļos rada gaišumu. Šie risinājumi dod lielas priekšrocības, ērtības un būtiski atspoguļosies uz Jūsu ikmēneša rēķina. Būvniecībā tiek izmantoti atpazīstamu zīmolu un tikai kvalitatīvākās iekārtas un būvmateriāli."
+            },
+        ],
+        bankSupport: "Atbalsts īpašuma iegādei"
     },
     floorPlansAndPricesPage: {
         livingRoom: "DZĪVOJAMA ISTABA",
@@ -40,11 +59,11 @@ export const translations = {
     propertyPage: {
         propertyTitle: "ĪPAŠUMA IEGĀDE",
         step1Title: "DZĪVOKĻA REZERVĀCIJA",
-        step1Text: "Dzīvokli iespējams rezervēt uz 10 dienām. Šajā posmā maksājumi nav nepieciešami...",
+        step1Text: "Dzīvokļa rezervāciju var veikt uz 10 dienām. Nav nepieciešams veikt nekādus maksājumus šajā posmā. Šo 10 dienu laikā Jums ir iespēja sazināties ar Jūsu izvēlēto kredītiestādi, konsultēties un noskaidrot finansējuma iespējas dzīvokļa iegādei, ja tas nepieciešams, kā arī noskaidrot citus Jums interesējošus jautājumus.",
         step2Title: "PRIEKŠLĪGUMA NOSLĒGŠANA",
-        step2Text: "Ja iegādājaties dzīvokli būvniecības laikā...",
+        step2Text: "Ja dzīvoklis tiek pirkts dzīvojamās mājas būvniecības laikā, ir nepieciešams slēgt pirkuma līguma priekšlīgumu. Saskaņā ar to būs jāiemaksā naudas summa 10% apmērā no kopējās pirkuma summas.",
         step3Title: "PIRKUMA LĪGUMS",
-        step3Text: "Pirkuma līgums tiks parakstīts pēc ēkas nodošanas ekspluatācijā..."
+        step3Text: "Pirkuma līgums ir parakstāms pēc dzīvojamās mājas nodošanas ekspluatācijā un sadalīšanas dzīvokļa īpašumos. Ja tika noslēgts priekšlīgums, tad pēc pirkuma līguma parakstīšanas ir jāmaksā atlikušie 90% no kopējās pirkuma summas. Ja nav slēgts priekšlīgums, tad visa pirkuma summa ir jāsamaksā pēc pirkuma līguma parakstīšanas."
     },
     buildingPage: {
         title: "ĒKA",
@@ -120,8 +139,8 @@ export const translations = {
         footnote: "[LV] The sizes of apartments and rooms indicated on this website are subject to change after their on-site measurement."
     },
     floatingBanner: {
-        text: "DZĪVOKĻU PLĀNOJUMS\nUN CENAS",
-        here: "ŠEIT ▶︎▶︎▶︎▶▶︎"
+        text: "Dzīvokļu plānojums \nun cenas",
+        here: "ŠEIT ⟹"
     },
   },
   eng: {
@@ -131,6 +150,7 @@ export const translations = {
     interior: 'Interior',
     property: 'Property acquisition',
     contact: 'Contact',
+    tour360: '360° tour',
     homePage: {
         title: "RĪGAS IELAS REZIDENCE",
         subtitle: "A place that becomes home!",
@@ -140,7 +160,25 @@ export const translations = {
             floors: "floors",
             energy: "energy class",
             commissioning: "year of commissioning",
-        }
+        },
+        projectStages: {
+            title: "PROJECT STAGES",
+            startLabel: "CONSTRUCTION START",
+            finishLabel: "COMMISSIONING",
+            startDate: "NOVEMBER 2024",
+            finishDate: "SEPTEMBER 2026",
+        },
+        sections1: [
+            {
+                text: "It is a modern, contemporary 7-story project featuring 28 warm, bright, comfortable, and practical apartments with various sizes and numbers of bedrooms, located in a very convenient and excellent location – 10b Rīgas Street, Ogre. The apartments offer a beautiful view of the center of Ogre, while the other side overlooks Ogre Island, the Daugava River, the Ogre promenade, and the promenade lighthouse. The building consists of 6 residential floors and a basement floor, which houses indoor parking spaces, technical rooms, stroller/bicycle storage, lockable storage rooms, a staircase, and a comfortable lobby for welcoming guests outside the apartments. In the courtyard, several types of parking spaces are available: 1) standard; 2) for people with special needs; 3) with the option to install electric vehicle charging stations. A modernly equipped area with children’s playgrounds, sports and active lifestyle equipment, and relaxation benches. Bicycle parking areas with a bike repair station."
+            },
+        ],
+        sections2: [
+            {
+                text: "Special attention is paid to current trends and technologies, as well as modern solutions. The building uses city heating with individually regulated underfloor heating in each apartment, individual heat meters, ensuring warmth is even, economical, and practical, and independent ventilation in each apartment via an individual air recuperation system from Komfovent, supplying clean and fresh air. The kitchen exhaust system is separate. Each apartment is separated by sound insulation layers. Large triple-glazed windows and display windows provide plenty of natural light in the apartments. These solutions offer significant advantages, comfort, and will noticeably affect your monthly bills. Construction uses recognized brand equipment and only the highest quality materials."
+            },
+        ],
+        bankSupport: "Support for property purchase with"
     },
     floorPlansAndPricesPage: {
         livingRoom: "LIVING ROOM WITH KITCHEN AREA",
@@ -163,11 +201,11 @@ export const translations = {
     propertyPage: {
         propertyTitle: "PROPERTY ACQUISITION",
         step1Title: "APARTMENT RESERVATION",
-        step1Text: "You can reserve an apartment for 10 days. No payments are required at this stage. During these 10 days, you have the opportunity to receive a consultation from your chosen credit institution about financing options for purchasing the apartment, if necessary, and to clarify any other matters of interest.",
-        step2Title: "EXECUTION OF A PRELIMINARY AGREEMENT",
-        step2Text: "If you purchase an apartment during construction, you must sign a preliminary purchase agreement. This agreement requires you to pay a deposit of 10% of the total purchase price.",
+        step1Text: "An apartment can be reserved for 10 days. No payments are required at this stage. During these 10 days, you have the opportunity to contact your chosen credit institution, receive консультации and clarify financing options for purchasing the apartment, if necessary, as well as ask any other questions of interest.",
+        step2Title: "PRELIMINARY AGREEMENT",
+        step2Text: "If the apartment is purchased during the construction phase of the residential building, it is necessary to conclude a preliminary purchase agreement. According to the agreement, a payment of 10% of the total purchase price must be made.",
         step3Title: "PURCHASE AGREEMENT",
-        step3Text:"The purchase agreement will be signed after the building is commissioned and divided into individual apartment units. If a preliminary agreement was signed, you will be required to pay the remaining 90% of the total purchase price after the purchase agreement is signed. If a preliminary agreement is not concluded, the entire purchase price must be paid upon signing the purchase agreement."
+        step3Text: "The purchase agreement is signed after the residential building has been commissioned and divided into individual apartment properties. If a preliminary agreement has been concluded, the remaining 90% of the total purchase price must be paid after signing the purchase agreement. If no preliminary agreement has been concluded, the full purchase amount must be paid after signing the purchase agreement."
     },
     buildingPage: {
     title: "BUILDING",
@@ -248,12 +286,13 @@ export const translations = {
     },
   },
   ru: {
-    home: '[RU] Home',
+    home: 'Главная',
     floorPlans: 'Планировка этажа и квартир',
-    building: '[RU] Building',
-    interior: '[RU] Interior',
-    property: '[RU] Property acquisition',
-    contact: '[RU] Contact',
+    building: 'Здание',
+    interior: 'Интерьер',
+    property: 'Приобретение недвижимости',
+    contact: 'Контакты',
+    tour360: '360° тур',
     homePage: {
         title: "RĪGAS IELAS REZIDENCE",
         subtitle: "Место, которое становится домом!",
@@ -263,7 +302,25 @@ export const translations = {
             floors: "этажа",
             energy: "класс энергоэффективности",
             commissioning: "год ввода в эксплуатацию",
-        }
+        },
+        projectStages: {
+            title: "ЭТАПЫ ПРОЕКТА",
+            startLabel: "НАЧАЛО СТРОИТЕЛЬСТВА",
+            finishLabel: "СДАЧА В ЭКСПЛУАТАЦИЮ",
+            startDate: "НОЯБРЬ 2024",
+            finishDate: "СЕНТЯБРЬ 2026",
+        },
+        sections1: [
+            {
+                text: "Это современный 7-этажный проект, включающий 28 тёплых, светлых, удобных и практичных квартир различной площади и количеством спален, в очень удобном и отличном месте – улица Ригас 10b, Огрe. Из квартир открывается прекрасный вид на центр Огре, с другой стороны – вид на Остров Огре, реку Даугава, променад Огре и маяк на променаде. Здание состоит из 6 жилых этажей и цокольного этажа, где расположены внутренние парковочные места, технические помещения, хранилища для детских колясок и велосипедов, закрываемые кладовые, лестничная клетка и комфортный вестибюль для приёма гостей вне квартир. Во дворе доступны различные типы парковочных мест: 1) стандартные; 2) для людей с особыми потребностями; 3) с возможностью установки станции для зарядки электромобилей. Современно оборудованная зона с детскими игровыми площадками, спортивными и активными тренажёрами, а также скамейками для отдыха. Велопарковки с веломастерской."
+            },
+        ],
+        sections2: [
+            {
+                text: "Особое внимание уделено современным тенденциям и технологиям, а также современным решениям. В здании используется городское отопление с индивидуально регулируемым тёплым полом в каждой квартире, индивидуальными счётчиками тепла, что обеспечивает равномерное, экономичное и практичное тепло, а также независимая вентиляция в каждой квартире через индивидуальную систему рекуперации воздуха Komfovent, которая обеспечивает чистый и свежий воздух. Система вытяжки кухни организована отдельно. Каждая квартира отделена слоями звукоизоляции. Просторные трёхкамерные окна и витрины обеспечивают квартиры большим количеством естественного света. Эти решения дают значительные преимущества, комфорт и заметно отражаются на ежемесячных счетах. В строительстве используются оборудование известных брендов и только высококачественные строительные материалы."
+            },
+        ],
+        bankSupport: "Поддержка при покупке недвижимости с"
     },
     floorPlansAndPricesPage: {
         livingRoom: "[RU] LIVING ROOM WITH KITCHEN AREA",
@@ -284,13 +341,13 @@ export const translations = {
         bathroom: "[RU] BATHROOM",
     },
     propertyPage: {
-        propertyTitle: "[RU] PROPERTY ACQUISITION",
-        step1Title: "[RU] APARTMENT RESERVATION",
-        step1Text: "[RU] You can reserve an apartment for 10 days. No payments are required at this stage. During these 10 days, you have the opportunity to receive a consultation from your chosen credit institution about financing options for purchasing the apartment, if necessary, and to clarify any other matters of interest.",
-        step2Title: "[RU] EXECUTION OF A PRELIMINARY AGREEMENT",
-        step2Text: "[RU] If you purchase an apartment during construction, you must sign a preliminary purchase agreement. This agreement requires you to pay a deposit of 10% of the total purchase price.",
-        step3Title: "[RU] PURCHASE AGREEMENT",
-        step3Text:"[RU] The purchase agreement will be signed after the building is commissioned and divided into individual apartment units. If a preliminary agreement was signed, you will be required to pay the remaining 90% of the total purchase price after the purchase agreement is signed. If a preliminary agreement is not concluded, the entire purchase price must be paid upon signing the purchase agreement."
+        propertyTitle: "ПРИОБРЕТЕНИЕ НЕДВИЖИМОСТИ",
+        step1Title: "РЕЗЕРВАЦИЯ КВАРТИРЫ",
+        step1Text: "Квартиру можно зарезервировать на 10 дней. На данном этапе не требуется производить никаких платежей. В течение этих 10 дней у Вас есть возможность связаться с выбранным Вами кредитным учреждением, получить консультацию и уточнить возможности финансирования покупки квартиры, если это необходимо, а также задать другие интересующие Вас вопросы.",
+        step2Title: "ЗАКЛЮЧЕНИЕ ПРЕДВАРИТЕЛЬНОГО ДОГОВОРА",
+        step2Text: "Если квартира приобретается во время строительства жилого дома, необходимо заключить предварительный договор купли-продажи. В соответствии с ним требуется внести сумму в размере 10% от общей стоимости покупки.",
+        step3Title: "ДОГОВОР КУПЛИ-ПРОДАЖИ",
+        step3Text: "Договор купли-продажи подписывается после ввода жилого дома в эксплуатацию и разделения его на отдельные объекты собственности. Если был заключён предварительный договор, после подписания договора купли-продажи необходимо оплатить оставшиеся 90% от общей стоимости покупки. Если предварительный договор не заключался, вся сумма покупки должна быть оплачена после подписания договора купли-продажи."
     },
     buildingPage: {
         title: "ЗДАНИЕ",

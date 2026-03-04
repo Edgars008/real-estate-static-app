@@ -23,7 +23,7 @@ const HomeLocation: React.FC<Props> = ({}) => {
               }}
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2175.842631811504!2d24.138010477148026!3d56.95149739903286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eece31ad99b693%3A0xd3c0c9e35f9cf87a!2zQnJ1xYZpbmlla3UgaWVsYSA3MmEsIExhdGdhbGVzIHByaWVrxaFwaWxzxJN0YSwgUsSrZ2EsIExWLTEwMDk!5e0!3m2!1slv!2slv!4v1772234473859!5m2!1slv!2slv"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2757.624847569643!2d24.5911005!3d56.8149153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ee8c3f00000001%3A0x0000000000000000!2sR%C4%ABgas%20iela%2010%2C%20Ogre%2C%20Latvia!5e0!3m2!1sen!2slv!4v0000000000000"
                 width="600"
                 height="450"
                 loading="lazy"
@@ -43,7 +43,7 @@ const HomeLocation: React.FC<Props> = ({}) => {
             >
               <iframe
                 title="Street View"
-                src="https://www.google.com/maps?q=&layer=c&cbll=56.951657204096435, 24.140635450413853&cbp=11,0,0,0,0&output=svembed"
+                src="https://www.google.com/maps/embed?pb=!4vXXXXXXXXXXXX!6m8!1m7!1sXXXXXXXXXXXX!2m2!1d56.814915!2d24.591101!3f0!4f0!5f0.7820865974627469"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -56,10 +56,14 @@ const HomeLocation: React.FC<Props> = ({}) => {
         {/* Address Text */}
         <Box sx={{ mt: 4 }}>
           <Typography variant="h6" fontWeight={600}>
-            Bruņinieku iela 72A - 29,
+            Rīgas iela 10,
           </Typography>
-          <Typography>Rīga</Typography>
-          <Typography>LV-1009</Typography>
+          <Typography variant="h6" fontWeight={600}>
+            Ogre
+          </Typography>
+          <Typography variant="h6" fontWeight={600}>
+            LV-5001
+          </Typography>
         </Box>
       </Container>
     </Box>

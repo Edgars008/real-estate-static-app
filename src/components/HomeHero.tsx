@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, Button, Container, Grid } from "@mui/material";
 import { translations, type Language } from "../config/translations";
-import houseImage from "../assets/homePage/house.png";
+import houseFrontImage from "../assets/homePage/house-front.jpg";
 import { NavLink } from "react-router-dom";
 
 interface Props {
@@ -21,7 +21,7 @@ const HomeHero: React.FC<Props> = ({ language }) => {
           display: "flex",
           alignItems: "center",
           color: "#fff",
-          backgroundImage: `url(${houseImage})`,
+          backgroundImage: `url(${houseFrontImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

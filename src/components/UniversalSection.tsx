@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Box, Typography, Stack, Container } from '@mui/material';
 
 type SectionItem = {
-  subtitle: string;
+  subtitle?: string;
   highlight?: string;
   text?: string;
 };
