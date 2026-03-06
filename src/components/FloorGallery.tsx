@@ -98,7 +98,7 @@ const FloorGallery: React.FC<Props> = ({ floors, language }) => {
       {/* APARTMENTS */}
       <Grid container spacing={4} sx={{ mt: 6 }}>
         {currentFloor.apartments.map((apartment) => (
-          <Grid size={{ xs: 12, md: 3 }}key={apartment.number}>
+          <Grid size={{ xs: 12, md: 3 }} key={apartment.number}>
             <Box>
               <Typography variant="h6" fontWeight={600}>
                 {t.floorGallery.apartmentNo} {apartment.number}

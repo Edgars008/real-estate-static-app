@@ -1,0 +1,23 @@
+<svg width="81" height="81" viewBox="0 0 81 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g stroke="#0D1D28" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+<!-- building -->
+<rect x="14" y="22" width="53" height="32"></rect>
+<line x1="14" y1="54" x2="67" y2="54"></line>
+
+<!-- barbell -->
+<line x1="30" y1="38" x2="51" y2="38"></line>
+
+<!-- left weights -->
+<rect x="26" y="34" width="3" height="8"></rect>
+<rect x="23" y="35" width="3" height="6"></rect>
+
+<!-- right weights -->
+<rect x="52" y="34" width="3" height="8"></rect>
+<rect x="55" y="35" width="3" height="6"></rect>
+
+<!-- ground line -->
+<line x1="6" y1="70" x2="75" y2="70"></line>
+
+</g>
+</svg>

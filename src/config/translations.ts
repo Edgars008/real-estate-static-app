@@ -3,7 +3,7 @@ export type Language = 'lv' | 'eng' | 'ru';
 export const translations = {
   lv: {
     home: 'Sākumlapa',
-    floorPlans: 'Stāvu un dzīvokļu plānojums',
+    floorPlans: 'Plānojums un cenas',
     building: 'Ēka',
     interior: 'Interjers',
     property: 'Īpašuma iegāde',
@@ -36,7 +36,37 @@ export const translations = {
                 text: "īpaša uzmanība ir vērsta aktuālām tendencēm un tehnoloģijām, kā arī mūsdienīgiem risinājumiem. Pilsētas apkure ar katrā dzīvoklī ar atsevišķi regulējamu silto grīdu sistēmu, individuālo siltumuzskaiti, kas padara siltumu vienmērīgu, ekonomisku,  prakstisku un neatkarīga ventilācija katrā dzīvoklī ir individuālā gaisa rekuperācijas sistēma no Komfovent, kas Jūs apgādās ar tīru un svaigu gaisu, virtuves nosūkšanas sistēma ir veidota atsevišķi! Katru dzīvokli atdala skaņas izolācijas slāņi. Plaši un lieli trīspakešu logi, vitrīnas, kas dzīvokļos rada gaišumu. Šie risinājumi dod lielas priekšrocības, ērtības un būtiski atspoguļosies uz Jūsu ikmēneša rēķina. Būvniecībā tiek izmantoti atpazīstamu zīmolu un tikai kvalitatīvākās iekārtas un būvmateriāli."
             },
         ],
-        bankSupport: "Atbalsts īpašuma iegādei"
+        bankSupport: "Atbalsts īpašuma iegādei",
+        features: {
+            balcony: "Terases un balkoni",
+            windows: "Lieli logi",
+            ceiling: "Griestu augstums (2.65-2.75 m)",
+            interior: "Kvalitatīva apdare",
+            floor: "Siltās grīdas",
+            ventilation: "Individuālā gaisa rekuperācija"
+        },
+        location: {
+            title: "ATRAŠANĀS VIETA UN APKĀRTNE",
+            tcDauga: "T/C DAUGA (8 min)",
+            publicTransport: "Sabiedriskais transports (2 min)",
+            promenade: "Promenāde (7 min)",
+            lidl: "Lidl (6 min)",
+            otherStores: "Citi pārtikas un saimniecības veikali (5 min)",
+            cityCenter: "Pilsētas centrs un kafejnīcas (7 min)",
+            beach: "Pludmale (6 min)",
+            ogresMarket: "Ogres tirgus (4 min)",
+            trainBusStation: "Dzelzsceļa stacija un autoosta (5 min)",
+            sportsHall: "Sporta halle un stadions (8 min)",
+            kindergarten: "Bērnudārzs (3 min)",
+            school: "Skola (13 min)",
+            cultureCenter: "Ogres Kultūras centrs (8 min)",
+            naturePark: "Dabas parks “Zilie kalni” (15 min)"
+        },
+        sectionLocation: [
+            {
+                text: "RĪGAS IELAS REZIDENCES atrodas blakus pilsētas centram, lieliskā lokācijā, kas vienlaikus ir ainaviska, praktiska un ļoti ērta. Atsevišķs pieslēgums pie A6 lielceļa, tuvumā pilsētas centrs, skolas, Daugava, promenāde u.c."
+            },
+        ],
     },
     floorPlansAndPricesPage: {
         livingRoom: "DZĪVOJAMA ISTABA",
@@ -145,7 +175,7 @@ export const translations = {
   },
   eng: {
     home: 'Home',
-    floorPlans: 'Floor and apartment layout',
+    floorPlans: 'Layout and Prices',
     building: 'Building',
     interior: 'Interior',
     property: 'Property acquisition',
@@ -178,7 +208,37 @@ export const translations = {
                 text: "Special attention is paid to current trends and technologies, as well as modern solutions. The building uses city heating with individually regulated underfloor heating in each apartment, individual heat meters, ensuring warmth is even, economical, and practical, and independent ventilation in each apartment via an individual air recuperation system from Komfovent, supplying clean and fresh air. The kitchen exhaust system is separate. Each apartment is separated by sound insulation layers. Large triple-glazed windows and display windows provide plenty of natural light in the apartments. These solutions offer significant advantages, comfort, and will noticeably affect your monthly bills. Construction uses recognized brand equipment and only the highest quality materials."
             },
         ],
-        bankSupport: "Support for property purchase with"
+        bankSupport: "Support for property purchase with",
+        features: {
+            balcony: "Terraces and balconies",
+            windows: "Large windows",
+            ceiling: "Ceiling height (2.65–2.75 m)",
+            interior: "High-quality interior finishing",
+            floor: "Underfloor heating",
+            ventilation: "Individual air recuperation system"
+        },
+        location: {
+            title: "LOCATION AND SURROUNDINGS",
+            tcDauga: "T/C DAUGA (8 min)",
+            publicTransport: "Public transport (2 min)",
+            promenade: "Promenade (7 min)",
+            lidl: "Lidl (6 min)",
+            otherStores: "Other grocery and household stores (5 min)",
+            cityCenter: "City center and cafes (7 min)",
+            beach: "Beach (6 min)",
+            ogresMarket: "Ogre Market (4 min)",
+            trainBusStation: "Train station and bus terminal (5 min)",
+            sportsHall: "Sports hall and stadium (8 min)",
+            kindergarten: "Kindergarten (3 min)",
+            school: "School (13 min)",
+            cultureCenter: "Ogre Cultural Center (8 min)",
+            naturePark: "Nature park “Blue Hills” (15 min)"
+        },
+        sectionLocation: [
+            {
+                text: "RĪGAS IELAS RESIDENCES is located near the city center, in an excellent location that is at the same time scenic, practical, and very convenient. Direct connection to the A6 highway, close to the city center, schools, Daugava river, promenade, etc."
+            },
+        ],
     },
     floorPlansAndPricesPage: {
         livingRoom: "LIVING ROOM WITH KITCHEN AREA",
@@ -287,7 +347,7 @@ export const translations = {
   },
   ru: {
     home: 'Главная',
-    floorPlans: 'Планировка этажа и квартир',
+    floorPlans: 'Планировка и цены',
     building: 'Здание',
     interior: 'Интерьер',
     property: 'Приобретение недвижимости',
@@ -320,7 +380,37 @@ export const translations = {
                 text: "Особое внимание уделено современным тенденциям и технологиям, а также современным решениям. В здании используется городское отопление с индивидуально регулируемым тёплым полом в каждой квартире, индивидуальными счётчиками тепла, что обеспечивает равномерное, экономичное и практичное тепло, а также независимая вентиляция в каждой квартире через индивидуальную систему рекуперации воздуха Komfovent, которая обеспечивает чистый и свежий воздух. Система вытяжки кухни организована отдельно. Каждая квартира отделена слоями звукоизоляции. Просторные трёхкамерные окна и витрины обеспечивают квартиры большим количеством естественного света. Эти решения дают значительные преимущества, комфорт и заметно отражаются на ежемесячных счетах. В строительстве используются оборудование известных брендов и только высококачественные строительные материалы."
             },
         ],
-        bankSupport: "Поддержка при покупке недвижимости с"
+        bankSupport: "Поддержка при покупке недвижимости с",
+        features: {
+            balcony: "Террасы и балконы",
+            windows: "Большие окна",
+            ceiling: "Высота потолков (2.65–2.75 м)",
+            interior: "Качественная внутренняя отделка",
+            floor: "Тёплые полы",
+            ventilation: "Индивидуальная система рекуперации воздуха"
+        },
+        location: {
+            title: "РАСПОЛОЖЕНИЕ И ОКРУЖЕНИЕ",
+            tcDauga: "T/C DAUGA (8 мин)",
+            publicTransport: "Общественный транспорт (2 мин)",
+            promenade: "Прогулочная зона (7 мин)",
+            lidl: "Lidl (6 мин)",
+            otherStores: "Другие продуктовые и хозяйственные магазины (5 мин)",
+            cityCenter: "Центр города и кафе (7 мин)",
+            beach: "Пляж (6 мин)",
+            ogresMarket: "Огресский рынок (4 мин)",
+            trainBusStation: "Железнодорожная станция и автовокзал (5 мин)",
+            sportsHall: "Спортивный зал и стадион (8 мин)",
+            kindergarten: "Детский сад (3 мин)",
+            school: "Школа (13 мин)",
+            cultureCenter: "Культурный центр Огре (8 мин)",
+            naturePark: "Природный парк «Голубые холмы» (15 мин)"
+        },
+        sectionLocation: [
+            {
+                text: "РЕЗИДЕНЦИЯ RĪGAS IELAS находится рядом с центром города, в отличном месте, которое одновременно живописное, практичное и очень удобное. Прямое подключение к шоссе A6, рядом центр города, школы, река Даугава, набережная и др."
+            },
+        ],
     },
     floorPlansAndPricesPage: {
         livingRoom: "[RU] LIVING ROOM WITH KITCHEN AREA",
