@@ -29,6 +29,7 @@ import nature from "../assets/homePage/location/nature.svg";
 import kinderGarden from "../assets/homePage/location/kinder-garden.svg";
 import sportHall from "../assets/homePage/location/sport-hall.svg";
 import cultureCenter from "../assets/homePage/location/culture-center.svg";
+import DistanceRoad from "../components/DistanceRoad";
 
 interface Props {
   language: Language;
@@ -80,6 +81,10 @@ const HomePage: React.FC<Props> = ({ language }) => {
     features: apartmentLocationFeatures,
   };
 
+  const contentLocatiOnther = {
+    items: t.homePage.sectionLocationOther,
+  };
+
   return (
     <>
       <HomeHero language={language} />
@@ -98,13 +103,19 @@ const HomePage: React.FC<Props> = ({ language }) => {
       />
       <UniversalSection
         content={contentLocation}
-        image={houseSide}
+        image={houseFront}
         imageAlt="Location-Side"
         imagePosition="right" // ← switch side here
       />
-      <HomeLocation language={language} />
+      <UniversalSection
+        content={contentLocatiOnther}
+        image={houseSide}
+        imageAlt="Location-Side-Other"
+        imagePosition="left" // ← switch side here
+      />
+      <DistanceRoad language={language} />
       <BankSupportBanner language={language} />
-      <ContactPage language={language} />
+      <HomeLocation language={language} />
     </>
   );
 };

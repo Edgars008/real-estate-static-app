@@ -67,6 +67,18 @@ export const translations = {
                 text: "RĪGAS IELAS REZIDENCES atrodas blakus pilsētas centram, lieliskā lokācijā, kas vienlaikus ir ainaviska, praktiska un ļoti ērta. Atsevišķs pieslēgums pie A6 lielceļa, tuvumā pilsētas centrs, skolas, Daugava, promenāde u.c."
             },
         ],
+        sectionLocationOther: [
+            {
+                text: "Citi publiskie infrastruktūras objekti (aptiekas, bankomāti, ārstu prakses, bankomāti, pulciņi, skaistumkopšanas saloni, autoservisi, komunālie dienesti, sporta halles u.c.) Viss sasniedzams 10-15 minūšu gājiena attālumā."
+            },
+        ],
+        distanceSection: {
+            title: "Ar auto no RĪGAS IELAS REZIDENCES",
+            locations: [
+                { city: "Ikšķile", time: "10 min" },
+                { city: "Rīga", time: "35 min" }
+            ]
+        }
     },
     floorPlansAndPricesPage: {
         livingRoom: "DZĪVOJAMA ISTABA",
@@ -239,6 +251,18 @@ export const translations = {
                 text: "RĪGAS IELAS RESIDENCES is located near the city center, in an excellent location that is at the same time scenic, practical, and very convenient. Direct connection to the A6 highway, close to the city center, schools, Daugava river, promenade, etc."
             },
         ],
+        sectionLocationOther: [
+            {
+                text: "Other public infrastructure facilities (pharmacies, ATMs, medical practices, hobby clubs, beauty salons, car services, municipal services, sports halls, etc.) are all reachable within a 10–15 minute walk."
+            },
+        ],
+        distanceSection: {
+            title: "By car from RĪGAS IELAS REZIDENCE",
+            locations: [
+                { city: "Ikšķile", time: "10 min" },
+                { city: "Riga", time: "35 min" }
+            ]
+        }
     },
     floorPlansAndPricesPage: {
         livingRoom: "LIVING ROOM WITH KITCHEN AREA",
@@ -411,6 +435,18 @@ export const translations = {
                 text: "РЕЗИДЕНЦИЯ RĪGAS IELAS находится рядом с центром города, в отличном месте, которое одновременно живописное, практичное и очень удобное. Прямое подключение к шоссе A6, рядом центр города, школы, река Даугава, набережная и др."
             },
         ],
+        sectionLocationOther: [
+            {
+                text: "Другие объекты общественной инфраструктуры (аптеки, банкоматы, медицинские кабинеты, кружки и секции, салоны красоты, автосервисы, коммунальные службы, спортивные залы и др.) находятся в 10–15 минутах ходьбы."
+            },
+        ],
+        distanceSection: {
+            title: "На автомобиле от резиденции RĪGAS IELAS",
+            locations: [
+                { city: "Икшкиле", time: "10 мин" },
+                { city: "Рига", time: "35 мин" }
+            ]
+        }
     },
     floorPlansAndPricesPage: {
         livingRoom: "[RU] LIVING ROOM WITH KITCHEN AREA",
