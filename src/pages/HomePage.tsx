@@ -2,7 +2,6 @@ import React from "react";
 import HomeHero from "../components/HomeHero";
 import HomeLocation from "../components/HomeLocation";
 import { translations, type Language } from "../config/translations";
-import ContactPage from "./ContactPage";
 import ProjectStages from "../components/ProjectStages";
 import UniversalSection from "../components/UniversalSection";
 import BankSupportBanner from "../components/BankSupportBanner";

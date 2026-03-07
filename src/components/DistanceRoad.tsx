@@ -14,9 +14,6 @@ interface Props {
 const DistanceRoad: React.FC<Props> = ({ language }) => {
   const t = translations[language].homePage.distanceSection;
 
-  // Gap between road and cars
-  const carGap = 20; // smaller than before, cars slightly closer
-
   return (
     <Box sx={{ backgroundColor: "#f4f1ea", py: { xs: 8, md: 14 }, position: "relative" }}>
       <Container maxWidth="lg">
