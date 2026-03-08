@@ -78,6 +78,11 @@ export const translations = {
                 { city: "Ikšķile", time: "10 min" },
                 { city: "Rīga", time: "35 min" }
             ]
+        },
+        apartmentSection: {
+            apartment1: "Dzīvoklis Nr. 1",
+            apartment2: "Dzīvoklis Nr. 2",
+            apartment3: "Dzīvoklis Nr. 3",
         }
     },
     floorPlansAndPricesPage: {
@@ -262,6 +267,11 @@ export const translations = {
                 { city: "Ikšķile", time: "10 min" },
                 { city: "Riga", time: "35 min" }
             ]
+        },
+        apartmentSection: {
+            apartment1: "Apartment No. 1",
+            apartment2: "Apartment No. 2",
+            apartment3: "Apartment No. 3",
         }
     },
     floorPlansAndPricesPage: {
@@ -446,6 +456,11 @@ export const translations = {
                 { city: "Икшкиле", time: "10 мин" },
                 { city: "Рига", time: "35 мин" }
             ]
+        },
+        apartmentSection: {
+            apartment1: "Квартира № 1",
+            apartment2: "Квартира № 2",
+            apartment3: "Квартира № 3",
         }
     },
     floorPlansAndPricesPage: {

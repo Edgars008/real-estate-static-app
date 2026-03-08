@@ -158,12 +158,16 @@ const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
 
           {/* MOBILE HAMBURGER */}
           {isMobile && (
-            <IconButton
-              onClick={() => setDrawerOpen(true)}
-              sx={{ color: "white" }}
-            >
-              <MenuIcon />
-            </IconButton>
+            <>
+              <Box sx={{ flexGrow: 1 }} />
+
+              <IconButton
+                onClick={() => setDrawerOpen(true)}
+                sx={{ color: "white" }}
+              >
+                <MenuIcon />
+              </IconButton>
+            </>
           )}
         </Toolbar>
       </AppBar>

@@ -25,35 +25,52 @@ const InteriorGallery: React.FC<Props> = ({ title, images }) => {
 
   return (
     <Box sx={{ mt: 12 }}>
-      {/* Section Title */}
-      <Typography
-        variant="h4"
-        fontWeight={700}
-        sx={{ mb: 4 }}
-      >
+      <Typography variant="h4" fontWeight={700} sx={{ mb: 4 }}>
         {title}
       </Typography>
 
-      {/* Image Wrapper */}
+      {/* Slider viewport */}
       <Box
         sx={{
           position: "relative",
           width: "100%",
           overflow: "hidden",
-          borderRadius: 2,
         }}
       >
-        {/* Main Image */}
+        {/* Slider track */}
         <Box
-          component="img"
-          src={images[currentIndex]}
-          alt={title}
           sx={{
-            width: "100%",
-            height: { xs: 300, md: 550 },
-            objectFit: "cover",
+            display: "flex",
+            transition: "transform 0.5s ease",
+            transform: `translateX(calc(-${currentIndex * 60}% + 20%))`,
+            alignItems: "center",
           }}
-        />
+        >
+          {images.map((img, index) => (
+            <Box
+              key={index}
+              sx={{
+                flex: "0 0 60%",
+                px: 2,
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <Box
+                component="img"
+                src={img}
+                alt={`slide-${index}`}
+                sx={{
+                  width: "100%",
+                  height: "auto",
+                  maxHeight: "75vh",
+                  objectFit: "contain",
+                  display: "block",
+                }}
+              />
+            </Box>
+          ))}
+        </Box>
 
         {/* Left Arrow */}
         <IconButton
@@ -61,13 +78,11 @@ const InteriorGallery: React.FC<Props> = ({ title, images }) => {
           sx={{
             position: "absolute",
             top: "50%",
-            left: 20,
+            left: 10,
             transform: "translateY(-50%)",
             backgroundColor: "rgba(0,0,0,0.4)",
             color: "#fff",
-            "&:hover": {
-              backgroundColor: "rgba(0,0,0,0.6)",
-            },
+            "&:hover": { backgroundColor: "rgba(0,0,0,0.6)" },
           }}
         >
           <ArrowBackIosNewIcon />
@@ -79,19 +94,17 @@ const InteriorGallery: React.FC<Props> = ({ title, images }) => {
           sx={{
             position: "absolute",
             top: "50%",
-            right: 20,
+            right: 10,
             transform: "translateY(-50%)",
             backgroundColor: "rgba(0,0,0,0.4)",
             color: "#fff",
-            "&:hover": {
-              backgroundColor: "rgba(0,0,0,0.6)",
-            },
+            "&:hover": { backgroundColor: "rgba(0,0,0,0.6)" },
           }}
         >
           <ArrowForwardIosIcon />
         </IconButton>
 
-        {/* Bottom Segmented Progress Indicator */}
+        {/* Bottom indicators */}
         <Box
           sx={{
             position: "absolute",
@@ -107,14 +120,13 @@ const InteriorGallery: React.FC<Props> = ({ title, images }) => {
               key={index}
               onClick={() => setCurrentIndex(index)}
               sx={{
-                width: 40,
+                width: 36,
                 height: 4,
                 borderRadius: 2,
                 cursor: "pointer",
-                transition: "all 0.3s ease",
                 backgroundColor:
                   index === currentIndex
-                    ? "#ffffff"
+                    ? "#fff"
                     : "rgba(255,255,255,0.4)",
               }}
             />
