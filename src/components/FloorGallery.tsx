@@ -8,10 +8,10 @@ export interface Apartment {
   number: number;
   stairwell: 1 | 2;
   isReserved?: boolean;
-  features?: string[]; // List of apartment features
-  totalArea?: string;  // e.g., "74.7 m²"
-  livingArea?: string; // e.g., "61 m²"
-  terraceArea?: string; // e.g., "13.7 m²"
+  features?: string[];
+  totalArea?: string;
+  livingArea?: string;
+  terraceArea?: string;
 }
 
 export interface Floor {
@@ -23,9 +23,14 @@ export interface Floor {
 export interface Props {
   floors: Floor[];
   language: Language;
+  onApartmentSelect?: (apartmentNumber: number) => void;
 }
 
-const FloorGallery: React.FC<Props> = ({ floors, language }) => {
+const FloorGallery: React.FC<Props> = ({
+  floors,
+  language,
+  onApartmentSelect,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const t = translations[language];
 
@@ -66,6 +71,7 @@ const FloorGallery: React.FC<Props> = ({ floors, language }) => {
           }}
         />
 
+        {/* PREV BUTTON */}
         <IconButton
           onClick={handlePrev}
           sx={{
@@ -75,11 +81,15 @@ const FloorGallery: React.FC<Props> = ({ floors, language }) => {
             transform: "translateY(-50%)",
             backgroundColor: "rgba(0,0,0,0.4)",
             color: "#fff",
+            "&:hover": {
+              backgroundColor: "rgba(0,0,0,0.6)",
+            },
           }}
         >
           <ArrowBackIosNewIcon />
         </IconButton>
 
+        {/* NEXT BUTTON */}
         <IconButton
           onClick={handleNext}
           sx={{
@@ -89,6 +99,9 @@ const FloorGallery: React.FC<Props> = ({ floors, language }) => {
             transform: "translateY(-50%)",
             backgroundColor: "rgba(0,0,0,0.4)",
             color: "#fff",
+            "&:hover": {
+              backgroundColor: "rgba(0,0,0,0.6)",
+            },
           }}
         >
           <ArrowForwardIosIcon />
@@ -99,12 +112,30 @@ const FloorGallery: React.FC<Props> = ({ floors, language }) => {
       <Grid container spacing={4} sx={{ mt: 6 }}>
         {currentFloor.apartments.map((apartment) => (
           <Grid size={{ xs: 12, md: 3 }} key={apartment.number}>
-            <Box>
+            <Box
+              onClick={() => onApartmentSelect?.(apartment.number)}
+              sx={{
+                cursor: "pointer",
+                p: 3,
+                borderRadius: 2,
+                backgroundColor: "#fff",
+                transition: "0.2s",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
+                "&:hover": {
+                  backgroundColor: "#ece9df",
+                  transform: "translateY(-2px)",
+                },
+              }}
+            >
               <Typography variant="h6" fontWeight={600}>
                 {t.floorGallery.apartmentNo} {apartment.number}
               </Typography>
 
-              <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ mb: 2 }}
+              >
                 {apartment.stairwell}. {t.floorGallery.stairwell}
               </Typography>
 
@@ -117,12 +148,16 @@ const FloorGallery: React.FC<Props> = ({ floors, language }) => {
                   {apartment.features && apartment.features.length > 0 && (
                     <>
                       <Typography fontWeight={600} sx={{ mb: 1 }}>
-                        {t.floorGallery.apartmentConsistsOf || "The apartment consists of:"}
+                        {t.floorGallery.apartmentConsistsOf ||
+                          "The apartment consists of:"}
                       </Typography>
+
                       <Box component="ol" sx={{ pl: 3, mb: 1 }}>
                         {apartment.features.map((feature, idx) => (
                           <li key={idx}>
-                            <Typography variant="body2">{feature}</Typography>
+                            <Typography variant="body2">
+                              {feature}
+                            </Typography>
                           </li>
                         ))}
                       </Box>
@@ -131,21 +166,34 @@ const FloorGallery: React.FC<Props> = ({ floors, language }) => {
 
                   {apartment.totalArea && (
                     <Typography variant="body2" fontWeight={700}>
-                      {t.floorGallery.totalArea || "Total area:"} {apartment.totalArea}
+                      {t.floorGallery.totalArea || "Total area:"}{" "}
+                      {apartment.totalArea}
                     </Typography>
                   )}
 
                   {apartment.livingArea && (
                     <Typography variant="body2" fontWeight={700}>
-                      {t.floorGallery.livingArea || "Living area:"} {apartment.livingArea}
+                      {t.floorGallery.livingArea || "Living area:"}{" "}
+                      {apartment.livingArea}
                     </Typography>
                   )}
 
                   {apartment.terraceArea && (
                     <Typography variant="body2" fontWeight={700}>
-                      {t.floorGallery.terrace || "Terrace:"} {apartment.terraceArea}
+                      {t.floorGallery.terrace || "Terrace:"}{" "}
+                      {apartment.terraceArea}
                     </Typography>
                   )}
+
+                  <Typography
+                    sx={{
+                      mt: 2,
+                      fontWeight: 600,
+                      color: "#8a7b52",
+                    }}
+                  >
+                    View gallery →
+                  </Typography>
                 </>
               )}
             </Box>

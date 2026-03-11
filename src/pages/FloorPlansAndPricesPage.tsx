@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Box, Typography, Container, Divider } from "@mui/material";
 import { translations, type Language } from "../config/translations";
 import FloorGallery from "../components/FloorGallery";
 import { floorGalleryData } from "../config/floorGallery";
 import ApartmentsTable from "../components/ApartmentsTable";
 import ContactPage from "./ContactPage";
+import InteriorGallery from "../components/InteriorGallery";
+import { interiorGallery } from "../config/interiorGallery";
 
 interface Props {
   language: Language;
@@ -12,6 +14,22 @@ interface Props {
 
 const FloorPlansAndPricesPage: React.FC<Props> = ({ language }) => {
   const t = translations[language];
+  const apt1Ref = useRef<HTMLDivElement>(null);
+  const apt2Ref = useRef<HTMLDivElement>(null);
+  const apt3Ref = useRef<HTMLDivElement>(null);
+
+  const scrollToApartment = (num: number) => {
+    const map: Record<number, React.RefObject<HTMLDivElement | null>> = {
+      1: apt1Ref,
+      2: apt2Ref,
+      3: apt3Ref,
+    };
+
+    map[num]?.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   return (
     <Box
@@ -34,6 +52,7 @@ const FloorPlansAndPricesPage: React.FC<Props> = ({ language }) => {
         <FloorGallery
           floors={floorGalleryData}
           language={language}
+          onApartmentSelect={scrollToApartment}
         />
 
         {/* Divider */}
@@ -54,6 +73,46 @@ const FloorPlansAndPricesPage: React.FC<Props> = ({ language }) => {
             borderColor: "#d8d4c8",
           }}
         />
+
+        <Box
+          ref={apt1Ref}
+          sx={{
+            maxWidth: "1400px",
+            mx: "auto", // centers the gallery
+            px: { xs: 2, md: 4 }, // side spacing
+          }}
+        >
+          <InteriorGallery
+            title={t.homePage.apartmentSection.apartment1}
+            images={interiorGallery.apartment1}
+          />
+        </Box>
+        <Box
+          ref={apt2Ref}
+          sx={{
+            maxWidth: "1400px",
+            mx: "auto", // centers the gallery
+            px: { xs: 2, md: 4 }, // side spacing
+          }}
+        >
+          <InteriorGallery
+            title={t.homePage.apartmentSection.apartment2}
+            images={interiorGallery.apartment2}
+          />
+        </Box>
+        <Box
+          ref={apt3Ref}
+          sx={{
+            maxWidth: "1400px",
+            mx: "auto", // centers the gallery
+            px: { xs: 2, md: 4 }, // side spacing
+          }}
+        >
+          <InteriorGallery
+            title={t.homePage.apartmentSection.apartment3}
+            images={interiorGallery.apartment3}
+          />
+        </Box>
 
         {/* Contact */}
         <ContactPage language={language} />
