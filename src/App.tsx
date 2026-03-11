@@ -10,7 +10,6 @@ import InteriorPage from "./pages/InteriorPage";
 import PropertyAcquisitionPage from "./pages/PropertyAcquisitionPage";
 import ContactPage from "./pages/ContactPage";
 import type { Language } from "./config/translations";
-import FloorFloatingButton from "./components/FloorFloatingButton";
 import TourPage from "./pages/TourPage";
 
 const APP_TITLE = "RĪGAS IELAS REZIDENCES";
