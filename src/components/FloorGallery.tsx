@@ -213,15 +213,55 @@ const FloorGallery: React.FC<Props> = ({
                   {t.floorGallery.reserved}
                 </Typography>
               ) : (
-                <Typography
-                  sx={{
-                    mt: 2,
-                    fontWeight: 600,
-                    color: "#8a7b52",
-                  }}
-                >
-                  View gallery →
-                </Typography>
+                <>
+                  {apartment.features && apartment.features.length > 0 && (
+                    <>
+                      <Typography fontWeight={600} sx={{ mb: 1 }}>
+                        {t.floorGallery.apartmentConsistsOf ||
+                          "The apartment consists of:"}
+                      </Typography>
+
+                      <Box component="ol" sx={{ pl: 3, mb: 1 }}>
+                        {apartment.features.map((feature, idx) => (
+                          <li key={idx}>
+                            <Typography variant="body2">{feature}</Typography>
+                          </li>
+                        ))}
+                      </Box>
+                    </>
+                  )}
+
+                  {apartment.totalArea && (
+                    <Typography variant="body2" fontWeight={700}>
+                      {t.floorGallery.totalArea || "Total area:"}{" "}
+                      {apartment.totalArea}
+                    </Typography>
+                  )}
+
+                  {apartment.livingArea && (
+                    <Typography variant="body2" fontWeight={700}>
+                      {t.floorGallery.livingArea || "Living area:"}{" "}
+                      {apartment.livingArea}
+                    </Typography>
+                  )}
+
+                  {apartment.terraceArea && (
+                    <Typography variant="body2" fontWeight={700}>
+                      {t.floorGallery.terrace || "Terrace:"}{" "}
+                      {apartment.terraceArea}
+                    </Typography>
+                  )}
+
+                  <Typography
+                    sx={{
+                      mt: 2,
+                      fontWeight: 600,
+                      color: "#8a7b52",
+                    }}
+                  >
+                    View gallery →
+                  </Typography>
+                </>
               )}
             </Box>
           </Grid>
