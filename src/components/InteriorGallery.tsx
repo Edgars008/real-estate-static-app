@@ -9,19 +9,36 @@ interface Props {
 }
 
 const InteriorGallery: React.FC<Props> = ({ title, images }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const loopedImages = [images[images.length - 1], ...images, images[0]];
+
+  const [currentIndex, setCurrentIndex] = useState(1);
+  const [transition, setTransition] = useState(true);
 
   const handlePrev = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? images.length - 1 : prev - 1
-    );
+    setCurrentIndex((prev) => prev - 1);
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) =>
-      prev === images.length - 1 ? 0 : prev + 1
-    );
+    setCurrentIndex((prev) => prev + 1);
   };
+
+  const handleTransitionEnd = () => {
+    if (currentIndex === 0) {
+      setTransition(false);
+      setCurrentIndex(images.length);
+    }
+
+    if (currentIndex === images.length + 1) {
+      setTransition(false);
+      setCurrentIndex(1);
+    }
+  };
+
+  React.useEffect(() => {
+    if (!transition) {
+      requestAnimationFrame(() => setTransition(true));
+    }
+  }, [transition]);
 
   return (
     <Box sx={{ mt: 12 }}>
@@ -29,7 +46,6 @@ const InteriorGallery: React.FC<Props> = ({ title, images }) => {
         {title}
       </Typography>
 
-      {/* Slider viewport */}
       <Box
         sx={{
           position: "relative",
@@ -37,16 +53,16 @@ const InteriorGallery: React.FC<Props> = ({ title, images }) => {
           overflow: "hidden",
         }}
       >
-        {/* Slider track */}
         <Box
+          onTransitionEnd={handleTransitionEnd}
           sx={{
             display: "flex",
-            transition: "transform 0.5s ease",
+            transition: transition ? "transform 0.5s ease" : "none",
             transform: `translateX(calc(-${currentIndex * 60}% + 20%))`,
             alignItems: "center",
           }}
         >
-          {images.map((img, index) => (
+          {loopedImages.map((img, index) => (
             <Box
               key={index}
               sx={{
@@ -65,14 +81,12 @@ const InteriorGallery: React.FC<Props> = ({ title, images }) => {
                   height: "auto",
                   maxHeight: "75vh",
                   objectFit: "contain",
-                  display: "block",
                 }}
               />
             </Box>
           ))}
         </Box>
 
-        {/* Left Arrow */}
         <IconButton
           onClick={handlePrev}
           sx={{
@@ -82,13 +96,11 @@ const InteriorGallery: React.FC<Props> = ({ title, images }) => {
             transform: "translateY(-50%)",
             backgroundColor: "rgba(0,0,0,0.4)",
             color: "#fff",
-            "&:hover": { backgroundColor: "rgba(0,0,0,0.6)" },
           }}
         >
           <ArrowBackIosNewIcon />
         </IconButton>
 
-        {/* Right Arrow */}
         <IconButton
           onClick={handleNext}
           sx={{
@@ -98,40 +110,10 @@ const InteriorGallery: React.FC<Props> = ({ title, images }) => {
             transform: "translateY(-50%)",
             backgroundColor: "rgba(0,0,0,0.4)",
             color: "#fff",
-            "&:hover": { backgroundColor: "rgba(0,0,0,0.6)" },
           }}
         >
           <ArrowForwardIosIcon />
         </IconButton>
-
-        {/* Bottom indicators */}
-        <Box
-          sx={{
-            position: "absolute",
-            bottom: 20,
-            left: "50%",
-            transform: "translateX(-50%)",
-            display: "flex",
-            gap: 1,
-          }}
-        >
-          {images.map((_, index) => (
-            <Box
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              sx={{
-                width: 36,
-                height: 4,
-                borderRadius: 2,
-                cursor: "pointer",
-                backgroundColor:
-                  index === currentIndex
-                    ? "#fff"
-                    : "rgba(255,255,255,0.4)",
-              }}
-            />
-          ))}
-        </Box>
       </Box>
     </Box>
   );
