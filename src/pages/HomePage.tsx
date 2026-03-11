@@ -29,9 +29,6 @@ import kinderGarden from "../assets/homePage/location/kinder-garden.svg";
 import sportHall from "../assets/homePage/location/sport-hall.svg";
 import cultureCenter from "../assets/homePage/location/culture-center.svg";
 import DistanceRoad from "../components/DistanceRoad";
-import InteriorGallery from "../components/InteriorGallery";
-import { interiorGallery } from "../config/interiorGallery";
-import { Box } from "@mui/material";
 
 interface Props {
   language: Language;
@@ -115,42 +112,6 @@ const HomePage: React.FC<Props> = ({ language }) => {
         imageAlt="Location-Side-Other"
         imagePosition="left" // ← switch side here
       />
-      <Box
-        sx={{
-          maxWidth: "1400px",
-          mx: "auto", // centers the gallery
-          px: { xs: 2, md: 4 }, // side spacing
-        }}
-      >
-        <InteriorGallery
-          title={t.homePage.apartmentSection.apartment1}
-          images={interiorGallery.apartment1}
-        />
-      </Box>
-      <Box
-        sx={{
-          maxWidth: "1400px",
-          mx: "auto", // centers the gallery
-          px: { xs: 2, md: 4 }, // side spacing
-        }}
-      >
-        <InteriorGallery
-          title={t.homePage.apartmentSection.apartment2}
-          images={interiorGallery.apartment2}
-        />
-      </Box>
-      <Box
-        sx={{
-          maxWidth: "1400px",
-          mx: "auto", // centers the gallery
-          px: { xs: 2, md: 4 }, // side spacing
-        }}
-      >
-        <InteriorGallery
-          title={t.homePage.apartmentSection.apartment3}
-          images={interiorGallery.apartment3}
-        />
-      </Box>
       <DistanceRoad language={language} />
       <BankSupportBanner language={language} />
       <HomeLocation language={language} />
