@@ -53,9 +53,6 @@ const App: React.FC = () => {
         </Routes>
       </Box>
 
-      {/* ✅ Floating Button (shows globally) */}
-      <FloorFloatingButton language={language} />
-
       {/* Footer */}
       <Footer title={APP_TITLE} />
     </Box>

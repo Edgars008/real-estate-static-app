@@ -1,8 +1,7 @@
 import React from "react";
-import { Box, Typography, Button, Container, Grid } from "@mui/material";
+import { Box, Typography, Container, Grid } from "@mui/material";
 import { translations, type Language } from "../config/translations";
 import houseFrontImage from "../assets/homePage/house-front.jpg";
-import { NavLink } from "react-router-dom";
 
 interface Props {
   language: Language;
@@ -45,25 +44,6 @@ const HomeHero: React.FC<Props> = ({ language }) => {
             <Typography variant="h6" sx={{ mb: 4 }}>
               {t.subtitle}
             </Typography>
-
-            <Button
-              component={NavLink}
-              to="/contact"
-              variant="contained"
-              size="large"
-              sx={{
-                px: 4,
-                py: 1.5,
-                borderRadius: "30px",
-                backgroundColor: "#1f4f63",
-                textDecoration: "none",
-                "&:hover": {
-                  backgroundColor: "#163947",
-                },
-              }}
-            >
-              {t.button}
-            </Button>
           </Box>
         </Container>
       </Box>
