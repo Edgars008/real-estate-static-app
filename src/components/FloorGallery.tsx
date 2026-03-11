@@ -44,6 +44,13 @@ const FloorGallery: React.FC<Props> = ({
     setCurrentIndex((prev) => (prev === floors.length - 1 ? 0 : prev + 1));
   };
 
+  const apartmentAreas = [
+    { number: 1, left: "5%", width: "22%" },
+    { number: 2, left: "27%", width: "22%" },
+    { number: 3, left: "49%", width: "22%" },
+    { number: 4, left: "71%", width: "22%" },
+  ];
+
   return (
     <Box sx={{ mt: 12 }}>
       {/* FLOOR TITLE */}
@@ -51,7 +58,7 @@ const FloorGallery: React.FC<Props> = ({
         {currentFloor.floorNumber}. {t.floorGallery.floor}
       </Typography>
 
-      {/* FLOOR IMAGE WITH CLICKABLE APARTMENTS */}
+      {/* FLOOR IMAGE */}
       <Box
         sx={{
           position: "relative",
@@ -73,76 +80,65 @@ const FloorGallery: React.FC<Props> = ({
         />
 
         {/* CLICKABLE APARTMENT AREAS */}
-        {[
-          {
-            number: 1,
-            left: "5%",
-            width: "22%",
-            color: "rgba(138, 123, 82, 0.35)",
-          },
-          {
-            number: 2,
-            left: "27%",
-            width: "22%",
-            color: "rgba(138, 123, 82, 0.35)",
-          },
-          {
-            number: 3,
-            left: "49%",
-            width: "22%",
-            color: "rgba(138, 123, 82, 0.35)",
-          },
-          {
-            number: 4,
-            left: "71%",
-            width: "22%",
-            color: "rgba(138, 123, 82, 0.35)",
-          },
-        ].map((apt) => (
-          <Box
-            key={apt.number}
-            onClick={() => onApartmentSelect?.(apt.number)}
-            sx={{
-              position: "absolute",
-              top: 0,
-              bottom: 0,
-              left: apt.left,
-              width: apt.width,
-              cursor: "pointer",
-              transition: "all 0.2s ease",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+        {apartmentAreas.map((apt) => {
+          const apartment = currentFloor.apartments.find(
+            (a) => a.number === apt.number
+          );
 
-              "&:hover": {
-                backgroundColor: apt.color,
-                outline: "3px solid rgba(255,255,255,0.9)",
-              },
+          const isReserved = apartment?.isReserved;
 
-              "&:hover span": {
-                opacity: 1,
-                transform: "translateY(0)",
-              },
-            }}
-          >
-            <Typography
-              component="span"
+          return (
+            <Box
+              key={apt.number}
+              onClick={() =>
+                !isReserved && onApartmentSelect?.(apt.number)
+              }
               sx={{
-                opacity: 0,
-                transform: "translateY(10px)",
-                transition: "0.2s",
-                backgroundColor: "rgba(0,0,0,0.6)",
-                color: "#fff",
-                px: 2,
-                py: 0.5,
-                borderRadius: 1,
-                fontSize: "14px",
+                position: "absolute",
+                top: 0,
+                bottom: 0,
+                left: apt.left,
+                width: apt.width,
+                cursor: isReserved ? "not-allowed" : "pointer",
+                transition: "all 0.2s ease",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+
+                backgroundColor: "transparent",
+
+                "&:hover": {
+                  backgroundColor: isReserved
+                    ? "rgba(211,47,47,0.35)"
+                    : "rgba(138,123,82,0.35)",
+                  outline: "3px solid rgba(255,255,255,0.9)",
+                },
+
+                "&:hover span": {
+                  opacity: 1,
+                  transform: "translateY(0)",
+                },
               }}
             >
-              {t.floorGallery.apartmentNo} {apt.number}
-            </Typography>
-          </Box>
-        ))}
+              <Typography
+                component="span"
+                sx={{
+                  opacity: 0,
+                  transform: "translateY(10px)",
+                  transition: "0.2s",
+                  backgroundColor: "rgba(0,0,0,0.6)",
+                  color: "#fff",
+                  px: 2,
+                  py: 0.5,
+                  borderRadius: 1,
+                  fontSize: "14px",
+                }}
+              >
+                {t.floorGallery.apartmentNo} {apt.number}
+              </Typography>
+            </Box>
+          );
+        })}
 
         {/* PREV BUTTON */}
         <IconButton
@@ -154,9 +150,6 @@ const FloorGallery: React.FC<Props> = ({
             transform: "translateY(-50%)",
             backgroundColor: "rgba(0,0,0,0.4)",
             color: "#fff",
-            "&:hover": {
-              backgroundColor: "rgba(0,0,0,0.6)",
-            },
           }}
         >
           <ArrowBackIosNewIcon />
@@ -172,9 +165,6 @@ const FloorGallery: React.FC<Props> = ({
             transform: "translateY(-50%)",
             backgroundColor: "rgba(0,0,0,0.4)",
             color: "#fff",
-            "&:hover": {
-              backgroundColor: "rgba(0,0,0,0.6)",
-            },
           }}
         >
           <ArrowForwardIosIcon />
@@ -186,16 +176,22 @@ const FloorGallery: React.FC<Props> = ({
         {currentFloor.apartments.map((apartment) => (
           <Grid size={{ xs: 12, md: 3 }} key={apartment.number}>
             <Box
-              onClick={() => onApartmentSelect?.(apartment.number)}
+              onClick={() =>
+                !apartment.isReserved &&
+                onApartmentSelect?.(apartment.number)
+              }
               sx={{
-                cursor: "pointer",
+                cursor: apartment.isReserved ? "not-allowed" : "pointer",
                 p: 3,
                 borderRadius: 2,
                 backgroundColor: "#fff",
                 transition: "0.2s",
                 boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
+
                 "&:hover": {
-                  backgroundColor: "#ece9df",
+                  backgroundColor: apartment.isReserved
+                    ? "#fdecea"
+                    : "#ece9df",
                   transform: "translateY(-2px)",
                 },
               }}
@@ -209,7 +205,18 @@ const FloorGallery: React.FC<Props> = ({
               </Typography>
 
               {apartment.isReserved ? (
-                <Typography color="error" fontWeight={600}>
+                <Typography
+                  sx={{
+                    display: "inline-block",
+                    px: 1.5,
+                    py: 0.5,
+                    borderRadius: 1,
+                    backgroundColor: "#d32f2f",
+                    color: "#fff",
+                    fontWeight: 600,
+                    fontSize: "13px",
+                  }}
+                >
                   {t.floorGallery.reserved}
                 </Typography>
               ) : (
@@ -224,7 +231,9 @@ const FloorGallery: React.FC<Props> = ({
                       <Box component="ol" sx={{ pl: 3, mb: 1 }}>
                         {apartment.features.map((feature, idx) => (
                           <li key={idx}>
-                            <Typography variant="body2">{feature}</Typography>
+                            <Typography variant="body2">
+                              {feature}
+                            </Typography>
                           </li>
                         ))}
                       </Box>
