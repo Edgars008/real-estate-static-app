@@ -1,5 +1,7 @@
-import React, { useRef } from "react";
-import { Box, Typography, Container, Divider } from "@mui/material";
+import React, { useRef, useState, useEffect } from "react";
+import { Box, Typography, Container, Divider, Fab, Zoom } from "@mui/material";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+
 import { translations, type Language } from "../config/translations";
 import FloorGallery from "../components/FloorGallery";
 import { floorGalleryData } from "../config/floorGallery";
@@ -14,10 +16,26 @@ interface Props {
 
 const FloorPlansAndPricesPage: React.FC<Props> = ({ language }) => {
   const t = translations[language];
+
+  // Refs
+  const floorGalleryRef = useRef<HTMLDivElement>(null);
   const apt1Ref = useRef<HTMLDivElement>(null);
   const apt2Ref = useRef<HTMLDivElement>(null);
   const apt3Ref = useRef<HTMLDivElement>(null);
 
+  // Floating button visibility
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 800); // adjust if needed
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Scroll to apartment gallery
   const scrollToApartment = (num: number) => {
     const map: Record<number, React.RefObject<HTMLDivElement | null>> = {
       1: apt1Ref,
@@ -26,6 +44,14 @@ const FloorPlansAndPricesPage: React.FC<Props> = ({ language }) => {
     };
 
     map[num]?.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  // Scroll back to floor plans
+  const scrollToFloorPlans = () => {
+    floorGalleryRef.current?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
@@ -49,11 +75,13 @@ const FloorPlansAndPricesPage: React.FC<Props> = ({ language }) => {
         </Typography>
 
         {/* Floor Gallery */}
-        <FloorGallery
-          floors={floorGalleryData}
-          language={language}
-          onApartmentSelect={scrollToApartment}
-        />
+        <Box ref={floorGalleryRef}>
+          <FloorGallery
+            floors={floorGalleryData}
+            language={language}
+            onApartmentSelect={scrollToApartment}
+          />
+        </Box>
 
         {/* Divider */}
         <Divider
@@ -74,12 +102,13 @@ const FloorPlansAndPricesPage: React.FC<Props> = ({ language }) => {
           }}
         />
 
+        {/* Apartment 1 */}
         <Box
           ref={apt1Ref}
           sx={{
             maxWidth: "1400px",
-            mx: "auto", // centers the gallery
-            px: { xs: 2, md: 4 }, // side spacing
+            mx: "auto",
+            px: { xs: 2, md: 4 },
           }}
         >
           <InteriorGallery
@@ -87,12 +116,14 @@ const FloorPlansAndPricesPage: React.FC<Props> = ({ language }) => {
             images={interiorGallery.apartment1}
           />
         </Box>
+
+        {/* Apartment 2 */}
         <Box
           ref={apt2Ref}
           sx={{
             maxWidth: "1400px",
-            mx: "auto", // centers the gallery
-            px: { xs: 2, md: 4 }, // side spacing
+            mx: "auto",
+            px: { xs: 2, md: 4 },
           }}
         >
           <InteriorGallery
@@ -100,12 +131,14 @@ const FloorPlansAndPricesPage: React.FC<Props> = ({ language }) => {
             images={interiorGallery.apartment2}
           />
         </Box>
+
+        {/* Apartment 3 */}
         <Box
           ref={apt3Ref}
           sx={{
             maxWidth: "1400px",
-            mx: "auto", // centers the gallery
-            px: { xs: 2, md: 4 }, // side spacing
+            mx: "auto",
+            px: { xs: 2, md: 4 },
           }}
         >
           <InteriorGallery
@@ -117,6 +150,31 @@ const FloorPlansAndPricesPage: React.FC<Props> = ({ language }) => {
         {/* Contact */}
         <ContactPage language={language} />
       </Container>
+
+      {/* Floating Scroll Button */}
+      <Zoom in={showScrollTop}>
+        <Fab
+          onClick={scrollToFloorPlans}
+          size="medium"
+          sx={{
+            position: "fixed",
+            top: "50%",
+            right: 150,
+            transform: "translateY(-50%)",
+            backgroundColor: "#1f1f1f",
+            color: "#fff",
+            opacity: 0.75,
+            boxShadow: 3,
+            "&:hover": {
+              backgroundColor: "#000",
+              opacity: 1,
+            },
+            zIndex: 1000,
+          }}
+        >
+          <KeyboardArrowUpIcon />
+        </Fab>
+      </Zoom>
     </Box>
   );
 };
