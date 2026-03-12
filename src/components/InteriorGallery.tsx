@@ -73,16 +73,26 @@ const InteriorGallery: React.FC<Props> = ({ title, images }) => {
               }}
             >
               <Box
-                component="img"
-                src={img}
-                alt={`slide-${index}`}
                 sx={{
                   width: "100%",
-                  height: "auto",
-                  maxHeight: "75vh",
-                  objectFit: "contain",
+                  height: { xs: 280, sm: 360, md: 420 },
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  overflow: "hidden",
                 }}
-              />
+              >
+                <Box
+                  component="img"
+                  src={img}
+                  alt={`slide-${index}`}
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              </Box>
             </Box>
           ))}
         </Box>
