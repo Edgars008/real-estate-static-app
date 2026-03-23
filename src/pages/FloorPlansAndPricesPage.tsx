@@ -9,6 +9,7 @@ import ApartmentsTable from "../components/ApartmentsTable";
 import ContactPage from "./ContactPage";
 import InteriorGallery from "../components/InteriorGallery";
 import { interiorGallery } from "../config/interiorGallery";
+import UniversalSectionWithGallery from "../components/UniversalSectionWithGallery";
 
 interface Props {
   language: Language;
@@ -144,6 +145,34 @@ const FloorPlansAndPricesPage: React.FC<Props> = ({ language }) => {
           <InteriorGallery
             title={t.homePage.apartmentSection.apartment3}
             images={interiorGallery.apartment3}
+          />
+        </Box>
+
+        {/* Apartment 3 */}
+        <Box
+          ref={apt1Ref}
+          sx={{
+            maxWidth: "1400px",
+            mx: "auto",
+            px: { xs: 2, md: 4 },
+          }}
+        >
+          <UniversalSectionWithGallery
+            imagePosition="right"
+            images={interiorGallery.apartment1}
+            content={{
+              title: t.homePage.apartmentSection.apartment1,
+              items: [
+                {
+                  subtitle: "Layout",
+                  text: "Spacious 3-room apartment with natural light.",
+                },
+                {
+                  subtitle: "Design",
+                  text: "Modern interior with high-quality materials.",
+                },
+              ],
+            }}
           />
         </Box>
 
